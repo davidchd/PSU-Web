@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     // declare variables
+    var agent = navigator.userAgent;
     var translate = {
         value: false,
         change: function() {
@@ -19,6 +20,14 @@ $(document).ready(function(){
             this.$cell.css("color", "#ffffff");
         }
     };
+
+    // set font size based on agent
+    console.log(agent);
+    if(agent.indexOf("Android") + agent.indexOf("iPhone") + agent.indexOf("Windows Phone") + agent.indexOf("SymbianOS") + agent.indexOf("iPod") > 0) {
+        $("body").css("font-size", "15px");
+    } else {
+        $("body").css("font-size", "20px");
+    }
 
     // init translation
     translate.change();

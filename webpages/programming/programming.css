@@ -1,3 +1,6 @@
+body {
+    font-family: Arial;
+}
 p {
     line-height: 120%;
 }
@@ -10,7 +13,6 @@ p {
 .Page {
     margin: 0;
     padding: 0;
-    font-family: Arial;
     background-color: #00a0ff;
 }
 .TopBar {
@@ -37,7 +39,7 @@ p {
     box-shadow: 0 0 20px 3px #666666;
 }
 .TopBarRight {
-    font-size: 16px;
+    font-size: 0.8em;
     color: #ffffff;
     width: auto;
     text-align: center;
@@ -45,7 +47,7 @@ p {
     margin: 0;
 }
 .Choice {
-    font-size: 20px;
+    font-size: 1em;
     color: #ffffff;
     padding: 5px;
     text-align: center;
@@ -73,15 +75,15 @@ p {
     color: #000000;
     margin: 0;
     padding: 10px;
-    min-height: 30px;
-    font-size: 30px;
+    /*min-height: 30px;*/
+    font-size: 1.3em;
     text-align: center;
 }
 .UserLeftLink {
     margin: 0;
     padding: 5px;
-    min-height: 20px;
-    font-size: 20px;
+    /*min-height: 20px;*/
+    font-size: 1em;
     text-align: left;
 }
 .UserLeftBreak {
