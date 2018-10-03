@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Learning Programing</title>
-        <script src="../../files/jquery-331-slim-min.js"></script>
+        <script src="../../files/jquery-min.js"></script>
         <script src="programming.js"></script>
         <link href="programming.css" rel="stylesheet" type="text/css"/>
     </head>
@@ -12,25 +12,51 @@
             <img class="TopBarLeft" src="../../files/Mercury-Logo-S.png" height="80px" alt="img unable to load" onclick="location.href='../../index.html';" />
             <div class="TopBarRightContainer">
                 <p class="TopBarRight">Chinese Translation</p>
-                <div style="float: left; width: 90px; margin: 5px 0 0;"><p class="Choice" id="TranslateOn">On</p></div>
-                <div style="float: right; width: 90px; margin: 5px 0 0;"><p class="Choice" id="TranslateOff">Off</p></div>
+                <div style="float: left; width: 90px; margin: 0;">
+                    <a href="javascript:void(0);" id="TranslateOn" style="color: #ffffff;text-align: center">
+                        <p class="Choice">On</p>
+                    </a>
+                </div>
+                <div style="float: right; width: 90px; margin: 0;">
+                    <a href="javascript:void(0);" id="TranslateOff" style="color: #ffffff">
+                        <p class="Choice">Off</p>
+                    </a>
+                </div>
             </div>
-            <hr />
+            <hr class="PageBreak" />
         </div>
         <div>
             <div class="UserLeft">
-                <table>
-                    <tr>
-                        <a></a>
-                    </tr>
-                </table>
+                <p class="UserLeftTitle">C++ Basics<small class="Chinese"> C++基础</small></p>
+                <hr class="UserLeftBreak" />
+                <a href="javascript:void(0);" style="text-decoration: none">
+                    <p class="UserLeftLink" id="wlcm">Welcome<small class="Chinese"> 欢迎</small></p>
+                </a>
+                <hr class="UserLeftBreak" />
+                <a href="javascript:void(0);" style="text-decoration: none">
+                    <p class="UserLeftLink" id="intro">Introduction</p>
+                </a>
+                <hr class="UserLeftBreak" />
+                <a href="javascript:void(0);" style="text-decoration: none">
+                    <p class="UserLeftLink" id="fst-prgm">First Program</p>
+                </a>
+                <hr class="UserLeftBreak" />
+                <a href="javascript:void(0);" style="text-decoration: none">
+                    <p class="UserLeftLink" id="cmt">Comments</p>
+                </a>
+                <hr class="UserLeftBreak" />
+                <a href="javascript:void(0);" style="text-decoration: none">
+                    <p class="UserLeftLink" id="dt-tp">Data Types</p>
+                </a>
+                <hr class="UserLeftBreak" />
+
             </div>
-            <div class="UserRight">
+            <div class="UserRight" id="dynamic">
 
             </div>
         </div>
         <div>
-            <hr />
+            <hr class="PageBreak" />
         </div>
         <div>
             <p class="Declaration">
