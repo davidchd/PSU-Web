@@ -2,17 +2,17 @@ $(document).ready(function(){
 
     // declare variables
     var agent = navigator.userAgent;
+    var $links = $(".UserLeftTitle,.UserLeftLink");
     var translate = {
         value: false,
-        change: function() {
+        view: function() {
             $("#TranslateOn").css("text-decoration", (this.value ? "underline" : "none"));
             $("#TranslateOff").css("text-decoration", (this.value ? "none" : "underline"));
-            $(".Chinese")[this.value ? "show" : "hide"]();
+            $(".Chinese,.ReloadedChinese")[this.value ? "show" : "hide"]();
         }
     };
-    var $links = $(".UserLeftLink");
     var selected = {
-        $cell: $("#wlcm"),
+        $cell: $("#basic"),
         change: function() {
             $links.css("background-color", "#ffffff");
             $links.css("color", "#000000");
@@ -22,7 +22,6 @@ $(document).ready(function(){
     };
 
     // set font size based on agent
-    console.log(agent);
     if(agent.indexOf("Android") + agent.indexOf("iPhone") + agent.indexOf("Windows Phone") + agent.indexOf("SymbianOS") + agent.indexOf("iPod") > 0) {
         $("body").css("font-size", "15px");
     } else {
@@ -30,57 +29,109 @@ $(document).ready(function(){
     }
 
     // init translation
-    translate.change();
+    translate.view();
 
     // init highlight cell
     selected.change();
-    $("#dynamic").load("subpages/Welcome.html");
+    $("#dynamic").load("subpages/basics/Basics.html", function() {
+        translate.view();
+    });
 
     // set translation on function
     $("#TranslateOn").click(function() {
         translate.value = true;
-        translate.change();
+        translate.view();
     });
 
     // set translation off function
     $("#TranslateOff").click(function() {
         translate.value = false;
-        translate.change();
+        translate.view();
     });
 
     // func for welcome
-    $("#wlcm").click(function() {
+    $("#basic").click(function() {
         selected.$cell = $(this);
         selected.change();
-        $("#dynamic").load("subpages/Welcome.html");
+        $("#dynamic").load("subpages/basics/Basics.html", function() {
+            translate.view();
+        });
     });
 
     // func for introduction
     $("#intro").click(function() {
         selected.$cell = $(this);
         selected.change();
-        $("#dynamic").load("subpages/Introduction.html");
+        $("#dynamic").load("subpages/basics/Introduction.html", function() {
+            translate.view();
+        });
     });
 
     // func for first program
     $("#fst-prgm").click(function() {
         selected.$cell = $(this);
         selected.change();
-        $("#dynamic").load("subpages/FirstProgram.html");
+        $("#dynamic").load("subpages/basics/FirstProgram.html", function() {
+            translate.view();
+        });
     });
 
     // func for comments
     $("#cmt").click(function() {
         selected.$cell = $(this);
         selected.change();
-        $("#dynamic").load("subpages/Comments.html");
+        $("#dynamic").load("subpages/basics/Comments.html", function() {
+            translate.view();
+        });
     });
 
     // func for data types
     $("#dt-tp").click(function() {
         selected.$cell = $(this);
         selected.change();
-        $("#dynamic").load("subpages/DataTypes.html");
+        $("#dynamic").load("subpages/basics/DataTypes.html", function() {
+            translate.view();
+        });
+    });
+
+    $("#var").click(function() {
+        selected.$cell = $(this);
+        selected.change();
+        $("#dynamic").load("subpages/basics/Variables.html", function() {
+            translate.view();
+        });
+    });
+
+    $("#func").click(function() {
+        selected.$cell = $(this);
+        selected.change();
+        $("#dynamic").load("subpages/basics/Function.html", function() {
+            translate.view();
+        });
+    });
+
+    $("#prdf-func").click(function() {
+        selected.$cell = $(this);
+        selected.change();
+        $("#dynamic").load("subpages/basics/PredefinedFunctions.html", function() {
+            translate.view();
+        });
+    });
+
+    $("#selec").click(function() {
+        selected.$cell = $(this);
+        selected.change();
+        $("#dynamic").load("subpages/basics/Selection.html", function() {
+            translate.view();
+        });
+    });
+
+    $("#rpt").click(function() {
+        selected.$cell = $(this);
+        selected.change();
+        $("#dynamic").load("subpages/basics/Repetition.html", function() {
+            translate.view();
+        });
     });
 
 });
