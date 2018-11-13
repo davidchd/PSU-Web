@@ -4,6 +4,23 @@ body {
 p {
     line-height: 120%;
 }
+table {
+    font-size: 0.8em;
+    margin: 10px 0 0;
+    border: 1px solid #000000;
+    border-collapse:collapse;
+}
+th {
+    color: #ffffff;
+    font-weight: 100;
+    padding: 5px 1px;
+    border: 1px solid #000000;
+    background-color: #000000;
+}
+td {
+    padding: 5px;
+    border: 1px solid #000000;
+}
 .Chinese {
     line-height: 0;
 }
@@ -120,9 +137,39 @@ p {
     line-height: 0;
     color: #888888;
 }
-.ReloadedTitle {
+.ReloadedHeading {
     text-align: left;
     margin: 0;
     padding: 0;
-    font-size: 3em;
+    /*font-weight: bold;*/
+    font-size: 2.7em;
 }
+.ReloadedSubheading {
+    text-align: left;
+    margin: 15px 0 0;
+    padding: 0;
+    font-size: 1.7em;
+}
+.ReloadedContent {
+    text-align: justify;
+    margin: 15px 0 0;
+    padding: 0;
+    font-size: 1em;
+}
+.language-cpp {
+    font-size: 15px;
+    line-height: 1.2;
+}
+/*
+.ReloadedCode {
+    margin: 15px 0 10px 20px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #000000;
+}
+.ReloadedInlineCode {
+    padding: 2px 5px;
+    color: #ffffff;
+    background-color: #000000;
+}
+*/

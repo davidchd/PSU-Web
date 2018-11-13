@@ -1,1 +1,145 @@
-<h1>First Program <small class="Chinese">第一个程序</small></h1>
+<script src="subpages/prism.js"></script>
+
+<div style="margin: 0; padding: 20px;">
+    <p class="ReloadedHeading">
+        First Program
+        <small class="ReloadedChinese">
+            第一个C++程序
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Code
+        <small class="ReloadedChinese">
+            代码
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+#include &#60;iostream&#62;
+using namespace std;
+// mian function
+int main() {
+    // output
+    cout << "Hello World.";
+    return 0;
+}
+    </code></pre>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        In this program, there are mainly two parts of code forming a complete program.
+        <br />
+        <small class="ReloadedChinese">
+            这个程序主要由两个部分组成。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        The first parts is the first two lines.
+        <br />
+        <small class="ReloadedChinese">
+            程序的前两行属于第一部分。
+            <br />
+        </small>
+        <br />
+        The first line
+        <code class="language-cpp">#include &#60;iostream&#62;</code>
+        is an include statement.
+        In C++, there are many useful functions that have already been created as head files.
+        This line of code declares that this program may use some functions from the
+        <i>&#60;iostream&#62; head file</i>.
+        <i>Function</i> is a relatively new concept,
+        but you will be able to find links of
+        <i>function</i> and
+        <i>predefined functions</i> in the left navigation bar.
+        <i>&#60;iostream&#62;</i> is one commonly used file in the C++ standard library.
+        Any program has
+        <code class="language-cpp">cin</code> or
+        <code class="language-cpp">cout</code> statement must include
+        <i>&#60;iostream&#62; head file</i>.
+        A list of C++ standard <i>head files</i> can be found from IBM Knowledge center at
+        <a href="https://www.ibm.com/support/knowledgecenter/en/SSPSQF_9.0.0/com.ibm.xlcpp111.aix.doc/standlib/header_files.html" target="_blank">here</a>.
+        <br />
+        <small class="ReloadedChinese">
+            程序的第一行是一个include指令。C++语言定义了很多实用的<i>函数(function)</i>，并把他们打包成不同的<i>头文件(head file)</i>。这一行代码标志着此程序可能会用到<i>&#60;iostream&#62;头文件</i>中的一些<i>函数</i>。<i>函数</i>是一个比较新的概念，但在左侧的导航栏里有两个关于它的链接应该可以帮到你。C++的标准库中，<i>&#60;iostream&#62;</i>是一个非常常用的<i>头文件</i>。任何使用 <i>cin</i> 和 <i>cout</i> 的程序都需要包含<i>&#60;iostream&#62;头文件</i>。上面的链接是一份C++标准库中头文件的列表。
+            <br />
+        </small>
+        <br />
+        The second line
+        <code class="language-cpp">using namespace std;</code>
+        is a declaration of <i>namespace</i>.
+        <i>Namespace</i> is a very abstract concept even in the programming field.
+        I may (or may not) talk about this later.
+        <br />
+        <small class="ReloadedChinese">
+            程序的第二行是对命名空间的声明。即使在程序领域，命名空间也是一个很抽象的概念。我以后可能会(也可能不会)再讨论它。(多半不会！)
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        The second part (line 3 - 9) is the rest of code except for the first two lines.
+        <br />
+        <small class="ReloadedChinese">
+            除了前两行，剩下的代码都属于程序的第二部分(第3 - 9行)。
+            <br />
+        </small>
+        <br />
+        Line 3 and 5 are <i>comments</i>.
+        I will talk about this in the very next section.
+        You can find the link for <i>comments</i> in the left navigation bar right after the link of this section.
+        <br />
+        <small class="ReloadedChinese">
+            第三行和第五行是程序的<i>注释</i>。我将会在下一节中讨论注释。在左侧的导航栏中，这一节下面紧挨着的链接就是关于<i>注释</i>的。
+            <br />
+        </small>
+        <br />
+        Line 4 to line 8 is the main function for this C++ project.
+        Every C++ project must has a main function, and it has to be named this way.
+        Once you execute an C++ project, program will start running here.
+        <code class="language-cpp">int</code> indicates this function will return an integer,
+        as line 7 shows
+        <code class="language-cpp">return 0;</code>.
+        <code class="language-cpp">main ()</code> shows the name of this function is "main".
+        This is a reserved name in C++,
+        which means any function named "main" will be recognized as the start point of this C++ project.
+        And therefore, you cannot have two function named as "main".
+        Further, things goes into
+        <code class="language-cpp">{...}</code> are the code which will really be executed.
+        <br />
+        <small class="ReloadedChinese">
+            第4 - 8行是这个C++项目的主程序。每个C++项目必须有一个主程序，并且必须按照这样命名。只要执行一个C++项目，程序就会从这里开始运行。第四行的开始，<i>int</i>是对于函数返回值类型的声明。在这里<i>int</i>代表该程序将返回一个整数，正如在第7行的返回指令中你所看到的。(在左侧的导航栏<i>Data Type 数据类型</i>的链接中你可以找到更多细节。)<i>int</i> 之后的<i>main</i>代表了这个函数的名字。在C++中<i>main</i>是一个保留关键字，任何名为<i>main</i>的函数都会被识别为C++的主函数，并作为这个C++项目的起始点。所以，在一个C++项目中只能存在一个名为<i>main</i>的函数。另外，在第4行和第8行两个大括号中间的内容是真正会被执行的代码。
+            <br />
+        </small>
+        <br />
+        In this very first program we have written,
+        there are really only one line of code that will do some work, which is line 6.
+        <code class="language-cpp">cout</code> is an output statement in C++.
+        It is not the only output command, but is very likely the most commonly used one.
+        This is a built-in function in <i>&#60;iostream&#62; head file</i>.
+        <code class="language-cpp">"Hello world."</code> is the content that will be outputted.
+        <br />
+        <small class="ReloadedChinese">
+            在我们的这个程序中，只有一行代码(行6)是真正有意义的。这是一行输出指令。<i>cout</i> 并不是C++中唯一的输出指令，但很可能是最常用的一个。它属于<i>&#60;iostream&#62;头文件</i>中的内置函数。后面的<i>"Hello world."</i>是这条指令真正会输出的内容。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        In C++, almost every executable command has to end with a semicolon
+        <code class="language-cpp">;</code>.
+        However, things that can be followed with a brace
+        <code class="language-cpp">{...}</code>
+        usually do not need to have a semicolon at the end
+        (such as functions, selections, repetitions, and etc).
+        <br />
+        <small class="ReloadedChinese">
+            在C++中，几乎每一行可以被执行的指令都需要以分号(;)结尾。但是，后面可以连接大括号({...})的指令一般不需要加分号(比如函数声明，条件语句，循环语句，等)。
+            <br />
+        </small>
+        <br />
+    </p>
+</div>

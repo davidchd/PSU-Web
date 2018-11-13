@@ -1,18 +1,23 @@
 $(document).ready(function(){
 
     // declare variables
-    var agent = navigator.userAgent;
     var $links = $(".UserLeftTitle,.UserLeftLink");
-    var translate = {
-        value: false,
-        view: function() {
-            $("#TranslateOn").css("text-decoration", (this.value ? "underline" : "none"));
-            $("#TranslateOff").css("text-decoration", (this.value ? "none" : "underline"));
-            $(".Chinese,.ReloadedChinese")[this.value ? "show" : "hide"]();
+    var agent = {
+        value: navigator.userAgent,
+        reloaded: function() {
+            if(this.value.indexOf("Android") + this.value.indexOf("iPhone") + this.value.indexOf("Windows Phone") + this.value.indexOf("SymbianOS") + this.value.indexOf("iPod") > 0) {
+                $("body").css("font-size", "15px");
+                $("pre").each(function(i) {
+                    $(this).removeClass("line-numbers");
+                    $(this).css("line-height", "1.2");
+                });
+            } else {
+                $("body").css("font-size", "20px");
+            }
         }
     };
     var selected = {
-        $cell: $("#basic"),
+        $cell: $("#wlcm"),
         change: function() {
             $links.css("background-color", "#ffffff");
             $links.css("color", "#000000");
@@ -20,21 +25,32 @@ $(document).ready(function(){
             this.$cell.css("color", "#ffffff");
         }
     };
+    var translate = {
+        value: false,
+        view: function() {
+            $("#TranslateOn").css("text-decoration", (this.value ? "underline" : "none"));
+            $("#TranslateOff").css("text-decoration", (this.value ? "none" : "underline"));
+            $(".Chinese,.ReloadedChinese")[this.value ? "show" : "hide"]();
+            agent.reloaded();
+        }
+    };
 
     // set font size based on agent
-    if(agent.indexOf("Android") + agent.indexOf("iPhone") + agent.indexOf("Windows Phone") + agent.indexOf("SymbianOS") + agent.indexOf("iPod") > 0) {
-        $("body").css("font-size", "15px");
-    } else {
-        $("body").css("font-size", "20px");
-    }
+    agent.reloaded();
+    console.log(agent.value);
 
     // init translation
     translate.view();
 
     // init highlight cell
     selected.change();
-    $("#dynamic").load("subpages/basics/Basics.html", function() {
+    $("#dynamic").load("subpages/basics/Welcome.html", function() {
         translate.view();
+    });
+
+    // init code block
+    $("#BlockCode").each(function(){
+        $(this).html("<ol><li>" + $(this).html().replace(/\n/g,"\n</li><li>") +"\n</li></ol>");
     });
 
     // set translation on function
@@ -50,10 +66,10 @@ $(document).ready(function(){
     });
 
     // func for welcome
-    $("#basic").click(function() {
+    $("#wlcm").click(function() {
         selected.$cell = $(this);
         selected.change();
-        $("#dynamic").load("subpages/basics/Basics.html", function() {
+        $("#dynamic").load("subpages/basics/Welcome.html", function() {
             translate.view();
         });
     });
