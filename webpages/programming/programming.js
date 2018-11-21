@@ -118,6 +118,14 @@ $(document).ready(function(){
         });
     });
 
+    $("#oprt").click(function() {
+        selected.$cell = $(this);
+        selected.change();
+        $("#dynamic").load("subpages/basics/Operators.html", function() {
+            translate.view();
+        });
+    });
+
     $("#func").click(function() {
         selected.$cell = $(this);
         selected.change();

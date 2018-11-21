@@ -1,1 +1,164 @@
-<h1>Variables <small class="Chinese">变量</small></h1>
+<div style="margin: 0; padding: 20px;">
+    <p class="ReloadedHeading">
+        Variables
+        <small class="ReloadedChinese">
+            变量
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        Variables can be seen as the most core part in programming.
+        As we mentioned on the previous section,
+        variables are basically reserved space in the computer RAM.
+        In C++, each variable must be assigned a type when it was created,
+        and different types of variables will be reserved for different size of space.
+        The format of creating a new variable is given below.
+        <br />
+        <small class="ReloadedChinese">
+            变量在编程中是可以说是最核心的部分。正如我们在上一个部分中提到的，变量就是计算机内存中的预留空间。每个变量在被创建的时候都必须指定类型，变量的不同类型会决定其在计算机内存中保留空间的大小。C++中声明一个新变量的语句格式如下。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+type variable_name(s) [ = value];
+    </code></pre>
+    <p class="ReloadedContent">
+        In the declaration above, <i>type</i> is stand for the data type of a variable.
+        <i>Variable_name</i> is the name of this variable.
+        Each variable needs a name to be located and further used.
+        It is also possible to declare multiple variables of the same type in one declaration.
+        In programming, and in this tutorial as well,
+        brackets <i>[...]</i> usually means optional items.
+        The bracket here <i>[ = value]</i> means that
+        it is optional to give an initial value to the variable when created.
+        <br />
+        <small class="ReloadedChinese">
+            在上面的变量声明中，<i>type</i>代表着这个变量的类型。<i>variable_name</i>代表着这个变量的名称。每个变量都需要一个名称来被定位，并在之后可以读取或者修改其中的数据。一行的变量声明中也可以声明多个同类型的变量。在编程界，中括号<i>[...]</i>通常用来表示可选的内容。(换句话说，中括号中的内容是可有可无的。)在变量声明的格式中，中括号中的<i> = value</i>代表编程者可以选择在创建变量时赋予其一个初始值，但这不是必须的。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Assigning Value
+        <small class="ReloadedChinese">
+            赋值
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        C++, and most of programming languages, uses a specific operator to assign values to variables.
+        You may have already noticed from the declaration above,
+        <code class="language-cpp">=</code> is being used.
+        However, the name of this operator is different from what we have learned in the algebra.
+        In mathematics, we call it "equal sign"; but in programming, it is called <i>assigning operator</i>.
+        We will discuss more operators in the next section.
+        <br />
+        <small class="ReloadedChinese">
+            C++和大部分其他程序语言中都是用一种特殊的符号给变量写入数据。你可能已经从之前的变量声明中注意到了，我们使用了<i>=</i>。注意，这个符号的名字和我们在代数中学到的并不一样。在数学领域，我们叫它"等于号"，但在计算机领域，它一般被称为"赋值符"(我会在下一部分中详细解释各种操作符)。向一个变量写入数据的过程一般被称为对该变量赋值。
+            <br />
+        </small>
+        <br />
+        When a program runs to an assigning statement,
+        it will first calculate the right part of the assigning operator,
+        and then assign this value into the variable on the left side of the assigning operator.
+        One thing that you may need to keep in mind is
+        the data types of right side and left side of the assigning operator must match.
+        I will use some examples in the rest of this page to explain.
+        <br />
+        <small class="ReloadedChinese">
+            当程序运行到一行赋值语句时，它会首先计算赋值符右边的部分，得到结果后，将右边表达式的值赋予到左边名称所对应的变量里。需要注意的是左右的数据类型必须对应，这里的"对应"不一定代表完全一样，我会在本页剩下的部分中分别讨论不同类型变量的赋值。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Integer Variables
+        <small class="ReloadedChinese">
+            整型变量
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        Integer variable, as it is named, can store integer numbers.
+        Assigning an floating point number to a integer variable will result in an error.
+        Some uses of integer variables are given below.
+        <br />
+        <small class="ReloadedChinese">
+            整型变量用于存储整数。把一个浮点数(小数)赋值给整型变量会引发编译器错误。下面是一些整型变量声明的例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+int a;          // declare one int variable
+int b, c;       // declare multiple int variables
+int x = 5;      // declare one int variable and assign initial value
+int y = 10, z;  // declare multiple int variables and assign initial value to one of them
+    </code></pre>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Floating-point & Double Floating-point Variables
+        <small class="ReloadedChinese" style="display: inline-block">
+            浮点型/双浮点型 变量
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        Floating-point and double floating-point variables can store floating-point numbers.
+        Assigning a floating point number to a integer variable will result in an error.
+        However, assigning a integer number to a floating-point variable will NOT result in an error;
+        the number will be stored with a fraction part of zero.
+        Moreover, differences between floating-point number and double floating-point number do exist,
+        but it will become obvious only if the program uses a significant number of variables
+        (maybe over thousand times).
+        Thus, we will only use double floating-point variables in this tutorial.
+        I will also recommend you to do so because it is really unnecessary
+        to distinguish float and double until you get into some huge projects.
+        Some uses of double variables are given below.
+        <br />
+        <small class="ReloadedChinese">
+            浮点型和双浮点型变量可以存储浮点数(小数)。把整数赋值给浮点型变量不会产生编译错误，程序会自动把小数部分保存为零。浮点型变量和双浮点型变量的确有一些区别，但对于小体量的编程完全不会造成影响。在本教程中，我会统一使用双浮点变量用于浮点数的存储。我也推荐你们这样做，因为只有当你涉及到非常大的项目开发时，它们的区别才会显现出来。下面是双浮点变量声明的几个例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+double a;           // declare one double variable
+double b, c;        // declare multiple double variables
+double x = 5;       // declare one double variable and assign initial value (5 will be converted to 5.0)
+double y = 9.5, z;  // declare multiple double variables and assign initial value to one of them
+    </code></pre>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Character Variables
+        <small class="ReloadedChinese">
+            字符型变量
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        //
+        <br />
+        <small class="ReloadedChinese">
+            //
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+//
+    </code></pre>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Boolean Variables
+        <small class="ReloadedChinese">
+            布尔型变量
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        //
+        <br />
+        <small class="ReloadedChinese">
+            //
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+//
+    </code></pre>
+</div>
