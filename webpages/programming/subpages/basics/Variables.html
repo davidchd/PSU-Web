@@ -1,3 +1,5 @@
+<script src="subpages/prism.js"></script>
+
 <div style="margin: 0; padding: 20px;">
     <p class="ReloadedHeading">
         Variables
@@ -28,16 +30,54 @@ type variable_name(s) [ = value];
         Each variable needs a name to be located and further used.
         It is also possible to declare multiple variables of the same type in one declaration.
         In programming, and in this tutorial as well,
-        brackets <i>[...]</i> usually means optional items.
-        The bracket here <i>[ = value]</i> means that
+        a bracket <i>[...]</i> usually means optional item.
+        The bracket here <code class="language-cpp">[ = value]</code> means that
         it is optional to give an initial value to the variable when created.
         <br />
         <small class="ReloadedChinese">
-            在上面的变量声明中，<i>type</i>代表着这个变量的类型。<i>variable_name</i>代表着这个变量的名称。每个变量都需要一个名称来被定位，并在之后可以读取或者修改其中的数据。一行的变量声明中也可以声明多个同类型的变量。在编程界，中括号<i>[...]</i>通常用来表示可选的内容。(换句话说，中括号中的内容是可有可无的。)在变量声明的格式中，中括号中的<i> = value</i>代表编程者可以选择在创建变量时赋予其一个初始值，但这不是必须的。
+            在上面的变量声明中，<i>type</i>代表着这个变量的类型。<i>variable_name</i>代表着这个变量的名称。每个变量都需要一个名称来被定位，并在之后可以读取或者修改其中的数据。一行的变量声明中也可以声明多个同类型的变量。在编程界，中括号 <i>[...]</i> 通常用来表示可选的内容。(换句话说，中括号中的内容是可有可无的。)在变量声明的格式中，中括号中的<i> = value</i>代表编程者可以选择在创建变量时赋予其一个初始值，但这不是必须的。
             <br />
         </small>
         <br />
     </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Variable Name
+        <small class="ReloadedChinese">
+            变量名
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        Good programmers tend to give meaningful variable names.
+        In C++, variable names are case-sensitive,
+        and there are some enforced restrictions of giving a variable name.
+        <br />
+        <small class="ReloadedChinese">
+            一个好的程序员一般会使用有意义的变量名。在C++中，变量名是区分大小写的。以下是一些命名变量时必须遵守的规则。
+            <br />
+        </small>
+    </p>
+    <ol>
+        <li>
+            A variable name can only contain letters, and/or underlines (_), and/or numbers. <br />
+            <small class="ReloadedChinese">
+                变量名只能包括字母，数字，下划线(_)中的一种或多种。
+            </small>
+        </li>
+        <li>
+            A variable name cannot start with a number. <br />
+            <small class="ReloadedChinese">
+                变量名的第一个字符不能是数字。
+            </small>
+        </li>
+        <li>
+            A variable name cannot be the same as any C++ reserved word. <br />
+            <small class="ReloadedChinese">
+                变量名不能和任何C++关键词相同。
+            </small>
+        </li>
+    </ol>
+    <br />
     <hr class="ReloadedBreak" />
     <p class="ReloadedSubheading">
         Assigning Value
@@ -54,7 +94,7 @@ type variable_name(s) [ = value];
         We will discuss more operators in the next section.
         <br />
         <small class="ReloadedChinese">
-            C++和大部分其他程序语言中都是用一种特殊的符号给变量写入数据。你可能已经从之前的变量声明中注意到了，我们使用了<i>=</i>。注意，这个符号的名字和我们在代数中学到的并不一样。在数学领域，我们叫它"等于号"，但在计算机领域，它一般被称为"赋值符"(我会在下一部分中详细解释各种操作符)。向一个变量写入数据的过程一般被称为对该变量赋值。
+            C++和大部分其他程序语言中都是用一种特殊的符号给变量写入数据。你可能已经从之前的变量声明中注意到了，我们使用了 <i>=</i> 。注意，这个符号的名字和我们在代数中学到的并不一样。在数学领域，我们叫它"等于号"，但在计算机领域，它一般被称为"赋值符"(我会在下一节中详细解释各种操作符)。向一个变量写入数据的过程一般被称为对该变量赋值。
             <br />
         </small>
         <br />
@@ -94,6 +134,7 @@ int b, c;       // declare multiple int variables
 int x = 5;      // declare one int variable and assign initial value
 int y = 10, z;  // declare multiple int variables and assign initial value to one of them
     </code></pre>
+    <br />
     <hr class="ReloadedBreak" />
     <p class="ReloadedSubheading">
         Floating-point & Double Floating-point Variables
@@ -125,6 +166,7 @@ double b, c;        // declare multiple double variables
 double x = 5;       // declare one double variable and assign initial value (5 will be converted to 5.0)
 double y = 9.5, z;  // declare multiple double variables and assign initial value to one of them
     </code></pre>
+    <br />
     <hr class="ReloadedBreak" />
     <p class="ReloadedSubheading">
         Character Variables
@@ -133,16 +175,65 @@ double y = 9.5, z;  // declare multiple double variables and assign initial valu
         </small>
     </p>
     <p class="ReloadedContent">
-        //
+        Character variables are usually used to handle non-numerical data.
+        In C++, character data are indicated with single quotation marks ('...').
+        One single character with two single quotation marks surrounding is a character data
+        (such as <code class="language-cpp">'C'</code>).
+        Anything stored as a character data is a character, and therefore, it cannot be used for any calculation.
+        For instance, <code class="language-cpp">int n = 3 + 5;</code> is a line of valid code and will has a result of 8.
+        However, <code class="language-cpp">int m = 3 + '5';</code> is very different.
+        For some reasons (hidden content below), it will be compiled, but will not give you the right result.
+        Some examples of declaring character variables are given below.
         <br />
         <small class="ReloadedChinese">
-            //
+            字符型变量通常用于处理非数字性的数据。C++中使用单引号('...')来表示字符型数据，被两个单引号夹在中间的单一的字符就是字符型数据。任何被存储为字符型数据的信息都只是字符，不可以直接参加计算。比如 <i style="display: inline-block">int n = 3 + 5;</i> 就是一行有效的语句，变量n将被赋值为8。但是，<i style="display: inline-block">int m = 3 + '5';</i> 得到的结果就会有很大区别。因为一些原因，它可以正常运行(详见下一段最后的隐藏内容)；但这一行表达式并不会给出你希望的结果。下面是一些声明字符型变量的例子。
             <br />
         </small>
     </p>
     <pre class="line-numbers"><code class="language-cpp">
-//
+char a;           // declare one character variable
+char b, c;        // declare multiple character variables
+char x = '8';     // declare one character variable and assign initial value ('8' is not stored as a number)
+char y = '$', z;  // declare multiple character variables and assign initial value to one of them
     </code></pre>
+    <p class="ReloadedContent">
+        This type of variable might be the one that will confuse you the most.
+        Because this type of data is designed to store a single character,
+        however, technically, such a data type actually falls into <i>Integer</i> category.
+        I will make this part hidden by default. If you want to learn more detail you can click
+        <a id="ToggleCharDetail" href="javascript:void(0);">here</a> to show or hide the rest content of this part.
+        <br />
+        <small class="ReloadedChinese">
+            这种变量可能是最难以理解的一类数据类型。这类变量是设计用于存储单一字符的，但是根本上讲，这类数据实际上属于整型<i>(Integer)</i>。我将会把接下面的一小部分内容设置为隐藏，如果你希望学习这部分更有难度的内容，你可以点击上方的"here"链接来显示或隐藏剩下的部分。
+            <br />
+        </small>
+        <span class="ReloadedCharDetail">
+            To begin with, any character, no matter it is a digit or letter or symbol,
+            will have a matched numerical representation inside a computer system.
+            Different software use different stands of encoding characters.
+            The one that C++ usually use is called American Standard Code for Information Interchange (ASCII).
+            You will be able to find a table for ASCII code and matched symbols on <a href="https://ascii.cl" target="_blank">ascii.cl</a>.
+            In this table, the column of ASCII represent the number actually being stored in the computer system,
+            where the column of Symbol represent the character that is displayed to the screen.
+            C++ stores the ASCII code in a character data type and display it as a character.
+            This makes it possible to assign either integer numbers or characters to character variables.
+            Here is some examples. Hope this will not confuse you.
+            <br />
+            <small class="ReloadedChinese">
+                首先，任何字符在计算机中都有相对应的数字编码，无论是数字还是字母还是符号。不同的软件会使用不同的编码标准。C++中最常用的编码方式是<i>美国信息交换标准代码(ASCII)</i>。你将会在上方的链接中找到一个ASCII的对照表。在这个表中，ASCII一列代表了计算机中存储的实际编码数字，Symbol一列代表了屏幕上显示出的字符。C++的字符型数据实际存储着字符对应的ASCII编码，并将其显示为对应的字符。这就使得字符型变量可以被赋予整型数据和字符型数据。这里是一些例子，希望不会太难理解。
+                <br />
+            </small>
+        </span>
+    </p>
+    <div class="ReloadedCharDetail">
+        <pre class="line-numbers"><code class="language-cpp">
+char a = 'h';     // variable a now has a value of 'h'
+char b = 104;     // variable b also has a value of 'h' because 104 matches character 'h' in ASCII
+b = b + 1;        // variable b now has a value of 'i' because 105 matches character 'i' in ASCII
+int num = 'h';    // just let you know, this is also a valid expression, and variable num will have a value of 104
+        </code></pre>
+    </div>
+    <br />
     <hr class="ReloadedBreak" />
     <p class="ReloadedSubheading">
         Boolean Variables
@@ -151,14 +242,23 @@ double y = 9.5, z;  // declare multiple double variables and assign initial valu
         </small>
     </p>
     <p class="ReloadedContent">
-        //
+        One boolean can only hold one of two possible values, it's either a <i>true</i> or a <i>false</i>.
+        Both <i>true</i> and <i>false</i> are reserved words in C++.
+        Sometimes <i>true</i> will be represented by 1 or any number other than 0,
+        where <i>false</i> is represented by 0.
+        Here are some examples of declaring boolean variables.
         <br />
         <small class="ReloadedChinese">
-            //
+            一个布尔类型变量只有两种可能的值：<i>真(true)</i>或者<i>伪(false)</i>，<i>true</i>和<i>false</i>都是C++中的关键词。下面是一些声明布尔类型变量的例子。
             <br />
         </small>
     </p>
     <pre class="line-numbers"><code class="language-cpp">
-//
+bool a;             // declare one boolean variable
+bool b, c;          // declare multiple boolean variables
+bool x = true;      // declare one boolean variable and assign initial value
+bool y = false, z;  // declare multiple boolean variables and assign initial value to one of them
+bool i = 50;        // just let you know, this is a valid expression, and variable i will have a value of true (or 1)
     </code></pre>
+    <br />
 </div>

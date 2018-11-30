@@ -1,5 +1,8 @@
-/* PrismJS 1.15.0
-https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+c+cpp&plugins=line-numbers */
+/**
+ * PrismJS 1.15.0
+ * https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+c+cpp&plugins=line-numbers
+ */
+
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -48,6 +51,7 @@ pre[class*="language-"] {
 	padding: .05em 0.15em;
 	white-space: normal;
 	border-radius: 0.2em;
+	display: inline-block;
 }
 
 .token.comment,

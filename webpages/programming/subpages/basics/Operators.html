@@ -1,1 +1,381 @@
-<h1>Operators <small class="Chinese">运算符</small></h1>
+<script src="subpages/prism.js"></script>
+
+<div style="margin: 0; padding: 20px;">
+    <p class="ReloadedHeading">
+        Operators
+        <small class="ReloadedChinese">
+            运算符
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        In C++, there are several different kinds of operators.
+        <br />
+        <small class="ReloadedChinese">
+            C++中的运算符一般被分为几个类型。
+            <br />
+        </small>
+    </p>
+    <ol>
+        <li>
+            Arithmetic Operators
+            <small class="ReloadedChinese">
+                算数运算符
+            </small>
+        </li>
+        <li>
+            Relational Operators
+            <small class="ReloadedChinese">
+                关系运算符
+            </small>
+        </li>
+        <li>
+            Logical Operators
+            <small class="ReloadedChinese">
+                逻辑运算符
+            </small>
+        </li>
+        <li>
+            Assignment Operators
+            <small class="ReloadedChinese">
+                赋值运算符
+            </small>
+        </li>
+        <li>
+            Bitwise Operators
+            <small class="ReloadedChinese">
+                位运算符
+            </small>
+        </li>
+        <li>
+            Other Operators
+            <small class="ReloadedChinese">
+                其他运算符
+            </small>
+        </li>
+    </ol>
+    <p class="ReloadedContent">
+        In this tutorial, I will only talk about the first 4 kinds of operators.
+        They are the most commonly used operators and will be enough for programming beginners.
+        Any operators will have an output and one or more input.
+        Take <code class="language-cpp">X = Y + Z;</code> for example;
+        X stores the output of the addition operator, and Y and Z are the inputs of the addition operator.
+        One thing I want to make note is that I used the variable name <i>a</i> for almost all of the following examples;
+        however, in different examples, the variable type of <i>a</i> will vary.
+        <br />
+        <small class="ReloadedChinese">
+            在本教程中，我只会讨论前四种操作符。他们(大概)都是编程中最常用到的，对于编程初学者来说这些已经完全足够了。任何运算符都会有一个输出和一个或多个的输入。比如<i>X = Y + Z;</i>，其中X存储了相加运算符的输出，Y和Z是相加运算符的输入。另外，在下面的那些例子中，我都使用了相同的变量名(大部分是<i>a</i>)。但其实在不同的例子中，变量类型是会相应变化的，使用同样的变量名只是为了偷懒【小声。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Arithmetic Operators
+        <small class="ReloadedChinese">
+            算术运算符
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        Arithmetic operators can be used on any numerical based values.
+        Types of variable that use arithmetic operators the most are probably integer and (double) floating-point.
+        <br />
+        <small class="ReloadedChinese">
+            算术运算符可以被用于任何数字值。使用算术运算符最多的变量类型大概是整型和(双)浮点型。
+            <br />
+        </small>
+    </p>
+    <table width="100%">
+        <tr>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                Operator
+                <small class="ReloadedChinese">运算符</small>
+            </th>
+            <th width="25%" style="border-right: 1px solid #ffffff">
+                Name
+                <small class="ReloadedChinese">名称</small>
+            </th>
+            <th width="35%" style="border-right: 1px solid #ffffff">
+                Description
+                <small class="ReloadedChinese">描述</small>
+            </th>
+            <th>
+                Example
+                <small class="ReloadedChinese">例子</small>
+            </th>
+        </tr>
+        <tr>
+            <td>+</td>
+            <td>Addition</td>
+            <td>Add two number together </td>
+            <td><code class="language-cpp">a = 4 + 8;</code> a will be 12</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>Subtraction</td>
+            <td>Subtract the second number from the first number </td>
+            <td><code class="language-cpp">a = 12 - 4;</code> a will be 8</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>Multiplication</td>
+            <td>Multiple the first number by the second number </td>
+            <td><code class="language-cpp">a = 3 * 4;</code> a will be 12</td>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td>Division</td>
+            <td>Divide the first number by the second number </td>
+            <td><code class="language-cpp">a = 12 / 3;</code> a will be 4</td>
+        </tr>
+        <tr>
+            <td>%</td>
+            <td>Modulo</td>
+            <td>Return the remainder of the first number being divided by the second </td>
+            <td><code class="language-cpp">a = 12 % 5;</code> a will be 2</td>
+        </tr>
+        <tr>
+            <td>++</td>
+            <td>Increase</td>
+            <td>Increase the number by one </td>
+            <td><code class="language-cpp">a = 10; a ++;</code> a will be 11</td>
+        </tr>
+        <tr>
+            <td>--</td>
+            <td>Decrease</td>
+            <td>Decrease the number by one </td>
+            <td><code class="language-cpp">a = 10; a --;</code> a will be 12</td>
+        </tr>
+    </table>
+    <br />
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Relational Operators
+        <small class="ReloadedChinese">
+            关系运算符
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        The outcome of relational operators are always boolean values,
+        where the input can be very likely any given data type (as long as both sides of relational operators have the same type).
+        Relational operators are mostly used in conditional (aka. selection) statements or repetitions.
+        In examples below, I used a variable to store the result of relational operators.
+        This is just for you to clearly understand what will be the output, but is not how programmers usually do.
+        <br />
+        <small class="ReloadedChinese">
+            关系运算符计算出的结果都是布尔类型。关系运算符在条件语句<i>(selection statement)</i>和循环<i>(repetition)</i>中最为常见。在下面例子中的表达式里，我用变量存储了关系运算的结果。这样做只是希望你们能更好地理解关系运算的结果，但并不是程序员通常的做法。(说实话，起码就我自己而言，很少用到布尔类型变量。)
+            <br />
+        </small>
+    </p>
+    <table width="100%">
+        <tr>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                Operator
+                <small class="ReloadedChinese">运算符</small>
+            </th>
+            <th width="25%" style="border-right: 1px solid #ffffff">
+                Name
+                <small class="ReloadedChinese">名称</small>
+            </th>
+            <th width="35%" style="border-right: 1px solid #ffffff">
+                Description
+                <small class="ReloadedChinese">描述</small>
+            </th>
+            <th>
+                Example
+                <small class="ReloadedChinese">例子</small>
+            </th>
+        </tr>
+        <tr>
+            <td>==</td>
+            <td>Equal to</td>
+            <td>Return true if two values are the same </td>
+            <td><code class="language-cpp">a = 3 == 5;</code> a will be false</td>
+        </tr>
+        <tr>
+            <td>!=</td>
+            <td>Not equal</td>
+            <td>Return true if two values are not the same </td>
+            <td><code class="language-cpp">a = 3 != 5;</code> a will be true</td>
+        </tr>
+        <tr>
+            <td>&#60;</td>
+            <td>Less than</td>
+            <td>Return true if the left side is less than the right side </td>
+            <td><code class="language-cpp">a = 3 < 5;</code> a will be true</td>
+        </tr>
+        <tr>
+            <td>&#62;</td>
+            <td>Greater than</td>
+            <td>Return true if the left side is greater than the right side </td>
+            <td><code class="language-cpp">a = 3 > 3;</code> a will be false</td>
+        </tr>
+        <tr>
+            <td>&#60;=</td>
+            <td>Less or equal to</td>
+            <td>Return true if the left side is less than or equal to the right side </td>
+            <td><code class="language-cpp">a = 3 <= 5;</code> a will be true</td>
+        </tr>
+        <tr>
+            <td>&#62;=</td>
+            <td>Greater or equal to</td>
+            <td>Return true if the left side is greater than or equal to the right side </td>
+            <td><code class="language-cpp">a = 3 >= 3;</code> a will be true</td>
+        </tr>
+    </table>
+    <br />
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Logical Operators
+        <small class="ReloadedChinese">
+            逻辑运算符
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        Both the input and the output of logical operators should be boolean type.
+        Likewise relational operators, logical operators are most commonly found in selection statement or repetitions.
+        <br />
+        <small class="ReloadedChinese">
+            逻辑运算符的输入和输出都应该是布尔类型。和关系运算符相似，大部分逻辑运算符都出现在条件语句或循环中。
+            <br />
+        </small>
+    </p>
+    <table width="100%">
+        <tr>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                Operator
+                <small class="ReloadedChinese">运算符</small>
+            </th>
+            <th width="25%" style="border-right: 1px solid #ffffff">
+                Name
+                <small class="ReloadedChinese">名称</small>
+            </th>
+            <th width="35%" style="border-right: 1px solid #ffffff">
+                Description
+                <small class="ReloadedChinese">描述</small>
+            </th>
+            <th>
+                Example
+                <small class="ReloadedChinese">例子</small>
+            </th>
+        </tr>
+        <tr>
+            <td>&&</td>
+            <td>And</td>
+            <td>Return true if both value are true, otherwise return false </td>
+            <td><code class="language-cpp">a = true && false;</code><br />a will be false (or 0)</td>
+        </tr>
+        <tr>
+            <td>||</td>
+            <td>Or</td>
+            <td>Return false if both value are false, otherwise return true </td>
+            <td><code class="language-cpp">a = true || false;</code><br />a will be true (or 1)</td>
+        </tr>
+        <tr>
+            <td>!</td>
+            <td>Not</td>
+            <td>Return the opposite of the boolean value </td>
+            <td><code class="language-cpp">a = !true;</code> a will be false</td>
+        </tr>
+    </table>
+    <br />
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Assignment Operators
+        <small class="ReloadedChinese">
+            赋值运算符
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        We have talked a little about the most basic assignment operator in last section.
+        However, there are many compound assignment operators as well.
+        All compound assignment operators are optional;
+        in other words, you can always use basic assignment operator and other operators to do the same thing as any compound assignment operators do.
+        Further, you may have noticed, the last row of the table below is vacant.
+        This means there are some other assignment operators which I did not show here.
+        They are really useless (from my own point of view) and not friendly for beginners.
+        <br />
+        <small class="ReloadedChinese">
+            在上一节中，我们浅显的讨论了赋值符。但除了这个最基础的赋值符之外，C++中还有很多复合的赋值符。所有的复合赋值符都是可选的，换句话说，所有复合赋值符的功能都可以用基础赋值符和别的运算符结合来完成。除此之外，你可能已经注意到下面表格的最后一行是缺省的。这意味着有一些其他的复合赋值符不在列表中。我并没有把一些在我看来尤其没用的和对入门程序员很不友好的赋值符列出来。
+            <br />
+        </small>
+    </p>
+    <table width="100%">
+        <tr>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                Operator
+                <small class="ReloadedChinese">运算符</small>
+            </th>
+            <th width="25%" style="border-right: 1px solid #ffffff">
+                Name
+                <small class="ReloadedChinese">名称</small>
+            </th>
+            <th width="35%" style="border-right: 1px solid #ffffff">
+                Description
+                <small class="ReloadedChinese">描述</small>
+            </th>
+            <th>
+                Example
+                <small class="ReloadedChinese">例子</small>
+            </th>
+        </tr>
+        <tr>
+            <td>=</td>
+            <td>Assignment</td>
+            <td>Assign the right side to the left side </td>
+            <td><code class="language-cpp">a = 7 + 8;</code> a will be 15</td>
+        </tr>
+        <tr>
+            <td>+=</td>
+            <td>Addition and assignment</td>
+            <td>Add the right side to the left side </td>
+            <td>
+                <code class="language-cpp">a = 8; a += 5;</code> a will be 13
+                <br />(Equivalent to <code class="language-cpp">a = a + 5;</code>)
+            </td>
+        </tr>
+        <tr>
+            <td>-=</td>
+            <td>Subtraction and assignment</td>
+            <td>Subtract the left side by the right side</td>
+            <td>
+                <code class="language-cpp">a = 13; a -= 5;</code> a will be 8
+                <br />(Equivalent to <code class="language-cpp">a = a - 5;</code>)
+            </td>
+        </tr>
+        <tr>
+            <td>*=</td>
+            <td>Multiplication and assignment</td>
+            <td>Multiple the left side by the right side </td>
+            <td>
+                <code class="language-cpp">a = 3; a *= 5;</code> a will be 15
+                <br />(Equivalent to <code class="language-cpp">a = a * 5;</code>)
+            </td>
+        </tr>
+        <tr>
+            <td>/=</td>
+            <td>Division and assignment</td>
+            <td>Divide the left side by the right side </td>
+            <td>
+                <code class="language-cpp">a = 15; a /= 5;</code> a will be 3
+                <br />(Equivalent to <code class="language-cpp">a = a / 5;</code>)
+            </td>
+        </tr>
+        <tr>
+            <td>%=</td>
+            <td>Modulo and assignment</td>
+            <td>Assign the remainder of the left side being divided by the right side to the left side </td>
+            <td>
+                <code class="language-cpp">a = 12; a %= 5;</code> a will be 2
+                <br />(Equivalent to <code class="language-cpp">a = a % 5;</code>)
+            </td>
+        </tr>
+        <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+    </table>
+    <br />
+</div>

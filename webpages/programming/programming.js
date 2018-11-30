@@ -31,7 +31,7 @@ $(document).ready(function(){
             $("#TranslateOn").css("text-decoration", (this.value ? "underline" : "none"));
             $("#TranslateOff").css("text-decoration", (this.value ? "none" : "underline"));
             $(".Chinese,.ReloadedChinese")[this.value ? "show" : "hide"]();
-            agent.reloaded();
+            // agent.reloaded();
         }
     };
 
@@ -115,6 +115,11 @@ $(document).ready(function(){
         selected.change();
         $("#dynamic").load("subpages/basics/Variables.html", function() {
             translate.view();
+            var $CharDetail = $(".ReloadedCharDetail");
+            $CharDetail.hide();
+            $("#ToggleCharDetail").click(function() {
+                $CharDetail.toggle("normal");
+            });
         });
     });
 
@@ -134,10 +139,10 @@ $(document).ready(function(){
         });
     });
 
-    $("#prdf-func").click(function() {
+    $("#clg-func").click(function() {
         selected.$cell = $(this);
         selected.change();
-        $("#dynamic").load("subpages/basics/PredefinedFunctions.html", function() {
+        $("#dynamic").load("subpages/basics/CallingFunctions.html", function() {
             translate.view();
         });
     });

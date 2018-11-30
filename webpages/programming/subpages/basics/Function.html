@@ -1,1 +1,236 @@
-<h1>Function <small class="Chinese">函数</small></h1>
+<script src="subpages/prism.js"></script>
+
+<div style="margin: 0; padding: 20px;">
+    <p class="ReloadedHeading">
+        Function
+        <small class="ReloadedChinese">
+            函数
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        A function in C++ is a group of statements that will be able to perform a specific task.
+        As we discussed in the section of <i>First Program</i>,
+        each C++ project must have at least one function, which is the main function.
+        Programmers usually divide different tasks into different functions
+        in order to make the program become easier to read and maintain.
+        The format of creating a new function is given below.
+        I will talk about how to call (run) a function in the next section.
+        <br />
+        <small class="ReloadedChinese">
+            C++中的函数是一组可以执行特定任务的代码。正如我们在 <i>第一个程序</i> 那一节讨论过的，任何一个C++的项目想要运行都至少要有一个函数(主函数)。程序员一般也会把每个程序划分成多个不同的任务，然后让每个函数执行不同的任务。这样做有利于增加程序的可读性并降低以后的维护成本。(其实我这样做的最主要原因是未来有可能需要用到类似的功能，可以直接使用以前写过的函数。)下面是创建一个函数的格式。我会在下一节中讨论如何调用(运行)一个函数。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+return_type function_name(parameter_list)
+{
+    function_body
+}
+    </code></pre>
+    <p class="ReloadedContent">
+        In the declaration above, line 2 (the combination of return type, function name, and parameter list) is called function heading.
+        Anything goes into the brace is called function body.
+        <br />
+        <small class="ReloadedChinese">
+            在上面的函数声明中，第二行(返回类型 <i>return_type</i>，函数名 <i>function_name</i>，和参数列表 <i>parameter_list</i>，这三者的组合)叫做函数头，剩下大括号中的内容叫做函数体。
+            <br />
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Function Name
+        <small class="ReloadedChinese">
+            函数名
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        The restriction of a function name is mostly the same as variable name's.
+        I will, anyway, list the enforced restrictions here.
+        Of course, besides of these enforced requirements,
+        good styles of naming a function or a variable is always encouraged.
+        <br />
+        <small class="ReloadedChinese">
+            函数名的命名规则和命名变量的相同。尽管如此，我还是列出了必须遵守的命名规则。除了这几条必须遵守的原则，好的命名习惯当然会让你的程序更上一步。
+        </small>
+    </p>
+    <ol>
+        <li>
+            A function name can only contain letters, and/or underlines (_), and/or numbers. <br />
+            <small class="ReloadedChinese">
+                函数名只能包括字母，数字，下划线(_)中的一种或多种。
+            </small>
+        </li>
+        <li>
+            A function name cannot start with a number. <br />
+            <small class="ReloadedChinese">
+                函数名的第一个字符不能是数字。
+            </small>
+        </li>
+        <li>
+            A function name cannot be the same as any C++ reserved word. <br />
+            <small class="ReloadedChinese">
+                函数名不能和任何C++关键词相同。
+            </small>
+        </li>
+    </ol>
+    <br />
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Parameter List
+        <small class="ReloadedChinese">
+            参数列表
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        The format of listing parameters is given below.
+        <br />
+        <small class="ReloadedChinese">
+            函数中参数列表的格式如下。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+[data_type parameter_name] [, data_type parameter_name] ...
+    </code></pre>
+    <p class="ReloadedContent">
+        As we discussed in the <i>Variables</i> section, a bracket <i>[...]</i> usually means optional item.
+        Therefore, as we can see from the format above, parameter list is optional to a function.
+        In other words, a function can have no parameter at all.
+        A very common way of using a function without any parameter is
+        to use the function to print some specific content to the screen.
+        <br />
+        <small class="ReloadedChinese">
+            正像我们在 <i>变量</i> 一节中讨论过的，中括号一般表示可选的内容。所以上面的格式就很容易理解了：一个函数可以有最少零个，最多无限个参数。你们可能会思考，如果没有任何参数传递到函数，函数有什么用呢？其实有用，比如一种非常常见的无参数函数就是向屏幕显示特定内容。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Return Type
+        <small class="ReloadedChinese">
+            返回类型
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        The return type of a function, also as known as function type,
+        is like the data type of the output of a function.
+        Some common return types are: int, double, bool, void, etc.
+        One valid function has to have a return type, or a return type of void means no return.
+        Once the function is assigned any return type other than void,
+        there must be a line of code in function body to return a value of matched return type.
+        I will use some examples to explain in detail.
+        <br />
+        <small class="ReloadedChinese">
+            函数的返回类型(也叫函数类型)，类似于函数的输出数据类型，一些常见的返回类型有整型 <i>(int)</i>，双浮点型 <i>(double)</i>，布尔型 <i>(bool)</i>，无返回型 <i>(void)</i>，等。一个函数必须具有返回类型，或者标明返回类型为空 <i>(void)</i>。当函数被标注了任何除了 <i>void</i> 的返回类型时，函数体 <i>(function body)</i> 中必须有至少一行 <i>return</i> 命令来返回与返回类型相匹配的数据。我将使用一些例子来详细解释。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Example 1
+        <small class="ReloadedChinese">
+            例子 1
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        Here is an example of a function used to output some specific contents to the screen.
+        <br />
+        <small class="ReloadedChinese">
+            这是一个用于向屏幕显示一些特定信息的函数。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+void display()
+{
+    cout << "This is a function " << "which will display these content.";
+}
+    </code></pre>
+    <p class="ReloadedContent">
+        The result of calling this function is: <br />
+        <i>This is a function which will display these content.</i><br />
+        <small class="ReloadedChinese">
+            调用这个函数的结果如上方斜体字。
+            <br />
+        </small>
+        <br />
+        The return type of this function is void, which means nothing will be returned.
+        Thus, there is no <i>return</i> statement inside the function body.
+        <br />
+        <small class="ReloadedChinese">
+            这个函数的返回值是 <i>void</i>，意味着这个函数不会返回任何数据。所以在函数体内并没有 <i>return</i> 指令。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Example 2
+        <small class="ReloadedChinese">
+            例子 2
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        Here is an example of a function used to calculate the average of two numbers.
+        <br />
+        <small class="ReloadedChinese">
+            这是一个用于计算两个数的平均数的函数。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+double average(double num1, double num2)
+{
+    double sum;
+    sum = num1 + num2;
+    return sum / 2;
+}
+    </code></pre>
+    <p class="ReloadedContent">
+        In this example, both the return type and two parameters are the same data type, <i>double</i>.
+        As you can see, we declared another variable inside this function to calculate the sum of two numbers.
+        However, this variable <i>sum</i> will not be able to be accessed from anywhere outside this function.
+        Technically, every time this function is called, a new variable named <i>sum</i> will be created;
+        and every time the function is finished, such a variable will be deleted.
+        <br />
+        <small class="ReloadedChinese">
+            在上面的例子中，函数的返回类型和两个参数都是 <i>double</i> 类型。我们在函数体中创建了一个新的变量 <i>sum</i> 来存储两个参数的加和。但是，这个变量是无法被从函数外的任何位置访问到的。实际上，每次这个函数被调用的时候，它都会创建一个新变量 <i>sum</i>，然后每次函数结束运行时从内存中删除这个变量。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Example 3
+        <small class="ReloadedChinese">
+            例子 3
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        Here is an example of a function being used as a timer.
+        It will display how much time left in the timer, where time is passed to the function by <i>time</i> parameter.
+        <br />
+        <small class="ReloadedChinese">
+            这是一个类似计时器的函数，函数会显示计时器还剩余的时间。剩余的时间是通过 <i>time</i> 参数传递给这个函数的。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+void timer(int time)
+{
+    cout << "There are still " << time << " minutes left. ";
+}
+    </code></pre>
+    <p class="ReloadedContent">
+        If the value of parameter <i>time</i> is 65, the result of calling this function will display: <br />
+        <i>There are still 65 minutes left. </i><br />
+        <small class="ReloadedChinese">
+            假设 <i>time</i> 参数的值是65，那么调用这个函数的结果如上方斜体字。
+            <br />
+        </small>
+        <br />
+    </p>
+</div>

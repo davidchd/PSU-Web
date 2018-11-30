@@ -1,5 +1,5 @@
 body {
-    font-family: Arial;
+    font-family: sans-serif, Microsoft YaHei, Arial;
 }
 p {
     line-height: 120%;
@@ -20,6 +20,15 @@ th {
 td {
     padding: 5px;
     border: 1px solid #000000;
+}
+strong {
+    font-weight: 100;
+}
+ol {
+    margin: 5px 0;
+}
+li {
+    line-height: 120%;
 }
 .Chinese {
     line-height: 0;

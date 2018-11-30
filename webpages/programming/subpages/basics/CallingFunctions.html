@@ -1,0 +1,129 @@
+<script src="subpages/prism.js"></script>
+
+<div style="margin: 0; padding: 20px;">
+    <p class="ReloadedHeading">
+        Calling Functions
+        <small class="ReloadedChinese">
+            调用函数
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        After a function is created, you can use this function by calling it.
+        A function prototype may be required.
+        The format of function prototype and calling a function is given below.
+        <br />
+        <small class="ReloadedChinese">
+            创建了一个函数之后，你就可以使用它了。在程序中，我们一般把使用函数的这种行为称为 <i>调用</i>。有些时候你可能还需要定义一个函数原型(我会在接下来的部分里详细解释)。下面给出了函数原型 <i>(function prototype)</i> 和调用函数 <i>(calling a function)</i> 的格式。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+                    // function prototype
+                    return_type function_name(parameter_list);
+
+                    // calling a function
+                    [variable = ] function_name(parameter_list);
+                </code></pre>
+    <br />
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Function Prototype
+        <small class="ReloadedChinese">
+            函数原型
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        As we talked in the <i>Variables</i> section, one variable needs to be declared before it being used.
+        This also applies to functions.
+        However, in some big project, it is almost impossible to write all functions before the main function in the same file;
+        sometimes we have to create separate files to write functions.
+        Thus, function prototype is a way to declare functions you will need to use.
+        Basically, a function prototype is just the function heading followed with a semicolon instead of a pair of brace.
+        Here is an example of a function prototype.
+        <br />
+        <small class="ReloadedChinese">
+            正如我们在 <i>变量</i> 一节中讨论过的，一个变量必须首先被声明，才能被使用。函数也遵循类似的道理。但是，在一些大型项目中，我们几乎不可能把所有函数都写在同一个文件中且在主函数前面，为了便于后期维护和增加可读性，我们有时不得不把函数写在不同的文件中，或写在主函数后面。所以，函数原型是一种特殊的方式来声明你将会使用的函数。这种方式基本上就是再写一遍函数头，但以分号结尾而不是连接一对大括号。这里是一个函数原型的例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+                    // function prototype
+                    double average(double num1, double num2);
+
+                    // function definition
+                    double average(double num1, double num2)
+                    {
+                        double sum;
+                        sum = num1 + num2;
+                        return sum / 2;
+                    }
+                </code></pre>
+    <p class="ReloadedContent">
+        When a C++ project is being compiled,
+        C++ compiler will find the file that contains the main function, and try to compile this file first.
+        Thus, if you use some functions in the main function, C++ compiler is not able to know what is this function.
+        You have to write a function prototype for each of the functions you are intend to use before the main function.
+        So when the C++ compiler reaches a function prototype, it will find and compile such a function first,
+        and then continue compiling the main function.
+        This is an complete example of a C++ project which will calculate the average of two given numbers.
+        Try to see how the function prototype is being used.
+        <br />
+        <small class="ReloadedChinese">
+            当一个C++项目被编译的时候，C++编译器将会首先找到含有主函数的文件，并优先编译该文件。因此，如果你在主函数中调用了其他函数，C++编译器并不会知道这些函数是什么。你需要为每个主函数中用到的其他函数声明一个函数原型并写在主函数的前面。这样，当C++编译器遇到一个函数原型的时候，它就会开始寻找这个函数原型对应的函数并先编译该函数，然后再继续编译主程序所在的文件。下面是一个完整的C++项目的例子，它调用了一个自定义的函数来计算两个数的平均数。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+                    #include &#60;iostream&#62;
+                    using namespace std;
+
+                    // function prototype
+                    double average(double num1, double num2);
+
+                    // main function
+                    int main()
+                    {
+                        double a = 87.3, b = 92.6;
+                        cout << "The average of " << a << " and " << b << " is: " << average(a, b);
+                        return 0;
+                    }
+
+                    // function definition
+                    double average(double num1, double num2)
+                    {
+                        double sum;
+                        sum = num1 + num2;
+                        return sum / 2;
+                    }
+                </code></pre>
+    <p class="ReloadedContent">
+        The output of above block of code is: <br />
+        <i>The average of 87.3 and 92.6 is: 89.95</i>
+        <br />
+        <small class="ReloadedChinese">
+            上面那段代码的输出如上一行斜体字所示。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        //
+        <br />
+        <small class="ReloadedChinese">
+            //
+            <br />
+        </small>
+        <br />
+    </p>
+    <p class="ReloadedContent">
+        //
+        <br />
+        <small class="ReloadedChinese">
+            //
+            <br />
+        </small>
+        <br />
+    </p>
+</div>
