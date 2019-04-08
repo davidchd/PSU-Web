@@ -1,0 +1,146 @@
+<script src="subpages/prism.js"></script>
+
+<div style="margin: 0; padding: 20px;">
+    <p class="ReloadedHeading">
+        Operators List
+        <small class="ReloadedChinese">
+            运算符参照表
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        This is a table of most commonly used C++ operators. <b>However, this is not a list of ALL operators in C++.</b>
+        In this table, operators are sorted based on the precedence.
+        The smaller a precedence group number is, the higher precedence it has, and the earlier it will be executed.
+        For more detail of each operator, please go to the <i>Operator</i> section in the left navigation bar.
+        <br />
+        <small class="ReloadedChinese">
+            这是一个C++常用运算符的参照表，<b>这个列表并不包括所有C++运算符。</b>此列表按照运算优先级排序。在表中 <i>优先级 Precedence</i> 一列的数字越小，运算符的优先级就越高。在左边导航栏的 <i>运算符 Operator</i> 一节中，你可以找到每种运算符更详细的信息。
+            <br />
+        </small>
+        <br />
+    </p>
+    <table width="100%">
+        <tr>
+            <th width="12%" style="border-right: 1px solid #ffffff">
+                Precedence
+                <small class="ReloadedChinese" style="display: inline-block">优先级</small>
+            </th>
+            <th width="15%" style="border-right: 1px solid #ffffff">
+                Operator
+                <small class="ReloadedChinese" style="display: inline-block">运算符</small>
+            </th>
+            <th width="30%" style="border-right: 1px solid #ffffff">
+                Name
+                <small class="ReloadedChinese" style="display: inline-block">运算符名称</small>
+            </th>
+            <th width="30%" style="border-right: 1px solid #ffffff">
+                Example
+                <small class="ReloadedChinese" style="display: inline-block">例子</small>
+            </th>
+            <th>
+                Associativity
+                <small class="ReloadedChinese" style="display: inline-block">结合性</small>
+            </th>
+        </tr>
+        <tr>
+            <td align="center" rowspan="3">Group 1</td>
+            <td>++ or --</td>
+            <td>Postfix increase or decrease</td>
+            <td><code class="language-cpp">a ++;</code> <code class="language-cpp">a --;</code></td>
+            <td align="center" rowspan="3">Left-to-right</td>
+        </tr>
+        <tr>
+            <td>()</td>
+            <td>Function call</td>
+            <td><code class="language-cpp">function();</code></td>
+        </tr>
+        <tr>
+            <td>[]</td>
+            <td>Subscript</td>
+            <td><code class="language-cpp">array[];</code></td>
+        </tr>
+        <tr>
+            <td align="center" rowspan="2">Group 2</td>
+            <td>++ or --</td>
+            <td>Prefix increase or decrease</td>
+            <td><code class="language-cpp">++ a;</code> <code class="language-cpp">-- a;</code></td>
+            <td align="center" rowspan="2">Right-to-left</td>
+        </tr>
+        <tr>
+            <td>!</td>
+            <td>Not</td>
+            <td><code class="language-cpp">!true;</code></td>
+        </tr>
+        <tr>
+            <td align="center">Group 3</td>
+            <td>* or / or %</td>
+            <td>Multiplication / Division / Modulo</td>
+            <td><code class="language-cpp">3 * 4 / 2 % 5;</code></td>
+            <td align="center" rowspan="8">Left-to-right</td>
+        </tr>
+        <tr>
+            <td align="center">Group 4</td>
+            <td>+ or /</td>
+            <td>Addition / Subtraction</td>
+            <td><code class="language-cpp">4 + 8 - 7;</code></td>
+        </tr>
+        <tr>
+            <td align="center">Group 5</td>
+            <td>&#62;&#62; or &#60;&#60;</td>
+            <td>Left shift / Right shift</td>
+            <td><code class="language-cpp">cin >> a;</code> <code class="language-cpp">cout << a;</code></td>
+        </tr>
+        <tr>
+            <td align="center" rowspan="2">Group 6</td>
+            <td>&#60; or &#60;=</td>
+            <td>Less / Less or equal</td>
+            <td><code class="language-cpp">3 &#60; 5;</code> <code class="language-cpp">3 &#60;= 5;</code></td>
+        </tr>
+        <tr>
+            <td>&#62; or &#62;=</td>
+            <td>Greater / Greater or equal</td>
+            <td><code class="language-cpp">3 &#62; 3;</code> <code class="language-cpp">3 &#62;= 5;</code></td>
+        </tr>
+        <tr>
+            <td align="center">Group 7</td>
+            <td>== or !=</td>
+            <td>Equal / Not equal</td>
+            <td><code class="language-cpp">3 == 5;</code> <code class="language-cpp">3 != 5;</code></td>
+        </tr>
+        <tr>
+            <td align="center">Group 8</td>
+            <td>&&</td>
+            <td>And</td>
+            <td><code class="language-cpp">true && false;</code></td>
+        </tr>
+        <tr>
+            <td align="center">Group 9</td>
+            <td>||</td>
+            <td>Or</td>
+            <td><code class="language-cpp">true || false;</code></td>
+        </tr>
+        <tr>
+            <td align="center" rowspan="3">Group 10</td>
+            <td>=</td>
+            <td>Assignment</td>
+            <td><code class="language-cpp">a = 5;</code></td>
+            <td align="center" rowspan="3">Right-to-left</td>
+        </tr>
+        <tr>
+            <td>+= or -=</td>
+            <td>Addition assignment /<br />Subtraction assignment</td>
+            <td><code class="language-cpp">a += 5;</code> <code class="language-cpp">a -= 5;</code></td>
+        </tr>
+        <tr>
+            <td>*= or /= or %=</td>
+            <td>Multiplication assignment /<br />Division assignment /<br />Modulo assignment</td>
+            <td>
+                <code class="language-cpp">a *= 3;</code>
+                <code class="language-cpp">a /= 6;</code>
+                <code class="language-cpp">a %= 9;</code>
+            </td>
+        </tr>
+    </table>
+    <br />
+</div>

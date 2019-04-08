@@ -1,1 +1,248 @@
-<h1>Selection <small class="Chinese">条件判断语句</small></h1>
+<script src="subpages/prism.js"></script>
+
+<div style="margin: 0; padding: 20px;">
+    <p class="ReloadedHeading">
+        Selection
+        <small class="ReloadedChinese">
+            条件语句
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        A selection structures, also known as conditional structures, is used to make decisions based on the given condition.
+        Programs have to make choices in order to have multiple route.
+        For example, I want to use the program to calculate the difference between two numbers.
+        It seems pretty simple, I just need to have the program use one number minus another.
+        However, how am I going to know which number is greater and which is smaller?
+        I will get a negative result if the program use the smaller number minus the greater number,
+        which is obviously wrong. Therefore, we need to use selection statements to make choices.
+        <br />
+        <small class="ReloadedChinese">
+            条件语句用于让程序对给定的条件作出判断，计算机程序需要条件语句才能具备多种处理可能。举个例子，我希望用程序计算两个数之间的差。表面上看，这是个很简单的问题，只需要用一个数减去另一个数。但是如果在两个数未知的情况下，我怎么告诉程序第一个数比较大还是第二个数比较大呢？如果在程序中设定第一个数减第二个数，但给定的第二个数比第一个数大，那么就会得到一个负的结果。这显然是不正确的。所以，我们需要让程序具备判断的能力，可以根据不同的情况做出不同的决定。
+            <br />
+        </small>
+        <br />
+        In C++, there are several ways to let the program make a decision.
+        Two most common ways are <i>if</i> statement and <i>switch</i> statement.
+        <br />
+        <small class="ReloadedChinese">
+            在C++中，有几种方式可以让程序根据条件做出选择，最常见的两种是 <i>if</i> 语句和 <i>switch</i> 语句。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        <i>If</i> Structure
+        <small class="ReloadedChinese">
+            if语句
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        The format of an <i>if</i> structure is given below.
+        <br />
+        <small class="ReloadedChinese">
+            if语句的格式如下。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+if (condition_1)
+{
+    // what to do if condition_1 is true
+}
+[ else if (condition_2)
+{
+    // what to do if condition_2 is true
+}
+else if (condition_3)
+{
+    // what to do if condition_3 is true
+}
+else if (condition_n)
+{
+    // what to do if condition_n is true
+}
+else
+{
+    // what to do if all the condition above is false
+} ]
+    </code></pre>
+    <p class="ReloadedContent">
+        As you can see, an <i>if</i> statement may have minimum of 1 but up to unlimited number of conditions.
+        I know it might be hard to understand. Here is a flow chart of the logic of if statement. Hope this can help you.
+        <br />
+        <small class="ReloadedChinese">
+            如你所见，<i>if</i> 语句可以有至少一个至多无限个的判断条件(conditions)。我知道这可能很难理解，希望下面的流程图可以帮到你们。
+            <br />
+        </small>
+    </p>
+    <img class="ReloadedImg" src="subpages/IfFlow.png" width="80%" />
+    <p class="ReloadedContent">
+        Here is an example of using <i>if</i> statement to convert a percentage score to letter grade.
+        <br />
+        <small class="ReloadedChinese">
+            下面是一个用 <i>if</i> 条件语句把百分比分数转换成字母成绩的例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+// parameter score stores the numerical score out of one hundred
+char grade(int score)
+{
+    char result;
+    if(score >= 90)
+    {
+        result = 'A';
+        cout << "Well done!";
+    }
+    else if(score >= 80)
+    {
+        result = 'B';
+    }
+    else if(score >= 70)
+    {
+        result = 'C';
+    }
+    else if(score >= 60)
+    {
+        result = 'D';
+    }
+    else
+    {
+        result = 'F';
+    }
+    return result;
+}
+    </code></pre>
+    <p class="ReloadedContent">
+        The last thing I want to make a note here is that the brace
+        <code class="language-cpp">{...}</code> in an <i>if</i> statement are optional
+        if there is only one statement inside the brace.
+        Thus, the above block of code can be simplified to below. They will work exactly the same.
+        <br />
+        <small class="ReloadedChinese">
+            最后，我想简单的提及一下大括号的省略。如果 <i>if</i> 语句中的某一个条件(condition)只对应了一条需要被执行的语句，那么这条语句前后的大括号就可以被省略。因此，上方的代码可以被简化如下，他们在运行效果上没有任何区别。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+// parameter score stores the numerical score out of one hundred
+char grade(int score)
+{
+    char result;
+    if(score >= 90)
+    {
+        result = 'A';
+        cout << "Well done!";
+    }
+    else if(score >= 80)
+        result = 'B';
+    else if(score >= 70)
+        result = 'C';
+    else if(score >= 60)
+        result = 'D';
+    else
+        result = 'F';
+    return result;
+}
+    </code></pre>
+    <br />
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        <i>Switch</i> Structure
+        <small class="ReloadedChinese">
+            switch语句
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        The format of an <i>switch</i> statement is given below.
+        <br />
+        <small class="ReloadedChinese">
+            switch语句的格式如下。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+switch(expression)
+{
+    case constant_1 :
+       statements_1
+       [break;]
+    [ case constant_2 :
+       statements_2
+       break;
+    case constant_n :
+       statements_2
+       break;
+    default :
+       statements_n ]
+}
+    </code></pre>
+    <p class="ReloadedContent">
+        Similar to <i>if</i> structure, you can have as many cases as you want.
+        However, one essential difference that you may need to keep in mind is
+        <i>switch</i> will continue executing after it has finished the matched case until it reaches
+        <code class="language-cpp">break;</code>. Hope this flow chart can help you.
+        <br />
+        <small class="ReloadedChinese">
+            和 <i>if</i> 语句一样，你可以有无限多的cases。但是，这两种条件语句的一个核心的区别就是 <i>switch</i> 语句会在遇到符合的条件之后一直执行代码，直到遇到 <i>break;</i> 为止。而 <i>if</i> 语句只会运行第一个遇到的符合条件所对应的代码块。希望下面的流程图可以帮到你们。
+            <br />
+        </small>
+    </p>
+    <img class="ReloadedImg" src="subpages/SwitchFlow.png" width="40%" />
+    <p class="ReloadedContent">
+        Here is an example of using <i>switch</i> statement to output day of week from sequential number of week.
+        <br />
+        <small class="ReloadedChinese">
+            这是一个根据星期中第几天的数字来显示星期几的例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+// parameter month stores the sequential number of week
+void displayWeek(int week)
+{
+    switch(week)
+    {
+        case 1:
+            cout << "Sunday";
+            break;
+        case 2:
+            cout << "Monday";
+            break;
+        case 3:
+            cout << "Tuesday";
+            break;
+        case 4:
+            cout << "Wednesday";
+            break;
+        case 5:
+            cout << "Thursday";
+            break;
+        case 6:
+            cout << "Friday";
+            break;
+        case 7:
+            cout << "Saturday";
+            break;
+        default:
+            cout << "Input Error";
+    }
+}
+    </code></pre>
+    <br />
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        Maybe you have already figured out, both <i>if</i> and <i>switch</i> statements have its own advantages.
+        <i>If</i> statement is more suitable for a scope of value or other conditions,
+        where <i>switch</i> is easier to handle single value.
+        You should choose which to use wisely based on the actual situation.
+        <br />
+        <small class="ReloadedChinese">
+            也许你们已经发现了，<i>if</i> 和 <i>switch</i> 语句其实各有优势。<i>if</i> 语句更适合处理范围性的数据和其他判断条件，<i>switch</i> 语句在处理有限可能的值时更简洁。对于不同的情况应该灵活的选择合适的条件语句。
+            <br />
+        </small>
+        <br />
+    </p>
+</div>

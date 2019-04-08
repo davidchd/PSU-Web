@@ -1,0 +1,148 @@
+<script src="subpages/prism.js"></script>
+
+<div style="margin: 0; padding: 20px;">
+    <p class="ReloadedHeading">
+        Array
+        <small class="ReloadedChinese">
+            数组
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        Suppose we are trying to calculate the average test score for test, but there are dozens of scores need to be stored.
+        If we create a variable for each score, it will be extremely difficult to go through them all.
+        Thus, this is the point of having arrays in programming.
+        Array is a specific type of variable. It is like a collection or a structure of data.
+        In C++, an array is a series of continued reserved spaces in computer's RAM,
+        and an array can only have one type of data in it.
+        <br />
+        <small class="ReloadedChinese">
+            假设我们想计算一次考试的平均分，但一共有几十个分数。如果我们为每一个分数建立一个变量，程序将变得极其臃肿，并且读取所有分数会非常困难。这就是数组存在的意义。数组是一种特殊的变量，它类似于一个数据的集合。在C++中，一个数组就是一串连续的预留内存空间，同一个数组内只能存储同种类型的数据。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Declaring Array
+        <small class="ReloadedChinese">
+            声明数组
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        This is the format of declaring an array.
+        One thing you may need to keep in mind is
+        the pair of brackets <code class="language-cpp">[]</code> here does not mean optional item.
+        <br />
+        <small class="ReloadedChinese">
+            声明数组的格式如下。需要注意的是这里的中括号 <i>[ ]</i> 并不意味着可选的内容，这里的中括号是真的需要写进变量声明的。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+data_type array_name[];
+data_type array_name[array_size];
+data_type array_name[] = {array};
+    </code></pre>
+    <p class="ReloadedContent">
+        All three lines of code above are valid array declarations.
+        In order not to confuse you with brackets, I will provide some examples first.
+        <br />
+        <small class="ReloadedChinese">
+            上面三行代码每个都是一个有效的数组声明。为了不让你们被中括号的事情困扰，下面是一些数组声明的例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+double arr1[];              // an empty double floating-point array
+double arr2[5];             // an array which contains five double floating-point number
+int arr3[] = {3, 7, 18};    // an array contains three integer: 3, 7, and 18
+    </code></pre>
+    <p class="ReloadedContent">
+        As we can see, <i>array size</i> must be a non-negative integer.
+        This is the maximum number of <i>elements</i> can be stored in such an array.
+        One single item in an array is called an <i>element</i>.
+        In the example above, there are three elements in variable <i>arr3</i>, which are 3, 7, and 18.
+        <br />
+        <small class="ReloadedChinese">
+            如我们所见，<i>数组大小 (array size)</i> 必须是一个非负整数，它代表着一个数组可以存储的 <i>元素 (element)</i> 的最大数量。数组中每个单独的数据被称为一个 <i>元素 (element)</i>。在上面的例子中，变量 <i>arr3</i> 拥有三个元素，分别是3，7，18。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        Using Array
+        <small class="ReloadedChinese">
+            使用数组
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        Elements in an array can be accessed by its <i>subscript</i>, which is also called <i>index</i>.
+        A subscript is the sequential number of an element in an array.
+        But instead of starting count at 1 as we usually do, a subscript in programming always start at 0.
+        Thus, for an array which have size of 5, the subscript of the last element is 4 but not 5.
+        Here is an example.
+        <br />
+        <small class="ReloadedChinese">
+            数组中的元素可以通过其 <i>索引 (subscript / index)</i> 来访问。索引是数组中元素的次序号。但和我们日常生活中不同，在程序中，索引一般从0开始计数而不是1。所以，对于一个数组大小为5的数组，其最后一个元素的索引将为4。下面是一个例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+int arr[8] = {2, 3, 5, 7, 11, 13, 17, 19};
+cout << arr[3];    // this will output the fourth item in the array, which is 7
+    </code></pre>
+    <p class="ReloadedContent">
+        Here is a table of subscripts and matched items for the above array.
+        <br />
+        <small class="ReloadedChinese">
+            这里是上面例子中数组的索引和对应元素的对照表。
+            <br />
+        </small>
+    </p>
+    <table width="100%">
+        <tr>
+            <th width="20%" style="border-right: 1px solid #ffffff">
+                Subscript
+                <small class="ReloadedChinese" style="display: inline-block">索引</small>
+            </th>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                0
+            </th>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                1
+            </th>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                2
+            </th>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                3
+            </th>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                4
+            </th>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                5
+            </th>
+            <th width="10%" style="border-right: 1px solid #ffffff">
+                6
+            </th>
+            <th width="10%">
+                7
+            </th>
+        </tr>
+        <tr align="center">
+            <td>Matched Element <small class="ReloadedChinese" style="display: inline-block">对应元素</small></td>
+            <td>2</td>
+            <td>3</td>
+            <td>5</td>
+            <td>7</td>
+            <td>11</td>
+            <td>13</td>
+            <td>17</td>
+            <td>19</td>
+        </tr>
+    </table>
+    <br />
+</div>

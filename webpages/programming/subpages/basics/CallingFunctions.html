@@ -19,18 +19,18 @@
         </small>
     </p>
     <pre class="line-numbers"><code class="language-cpp">
-                    // function prototype
-                    return_type function_name(parameter_list);
+// function prototype
+return_type function_name(parameter_list);
 
-                    // calling a function
-                    [variable = ] function_name(parameter_list);
-                </code></pre>
+// calling a function
+function_name(parameter_list);
+    </code></pre>
     <br />
     <hr class="ReloadedBreak" />
     <p class="ReloadedSubheading">
         Function Prototype
         <small class="ReloadedChinese">
-            函数原型
+            函数原型(函数声明)
         </small>
     </p>
     <p class="ReloadedContent">
@@ -48,17 +48,17 @@
         </small>
     </p>
     <pre class="line-numbers"><code class="language-cpp">
-                    // function prototype
-                    double average(double num1, double num2);
+// function prototype
+double average(double num1, double num2);
 
-                    // function definition
-                    double average(double num1, double num2)
-                    {
-                        double sum;
-                        sum = num1 + num2;
-                        return sum / 2;
-                    }
-                </code></pre>
+// function definition
+double average(double num1, double num2)
+{
+    double sum;
+    sum = num1 + num2;
+    return sum / 2;
+}
+    </code></pre>
     <p class="ReloadedContent">
         When a C++ project is being compiled,
         C++ compiler will find the file that contains the main function, and try to compile this file first.
@@ -70,33 +70,33 @@
         Try to see how the function prototype is being used.
         <br />
         <small class="ReloadedChinese">
-            当一个C++项目被编译的时候，C++编译器将会首先找到含有主函数的文件，并优先编译该文件。因此，如果你在主函数中调用了其他函数，C++编译器并不会知道这些函数是什么。你需要为每个主函数中用到的其他函数声明一个函数原型并写在主函数的前面。这样，当C++编译器遇到一个函数原型的时候，它就会开始寻找这个函数原型对应的函数并先编译该函数，然后再继续编译主程序所在的文件。下面是一个完整的C++项目的例子，它调用了一个自定义的函数来计算两个数的平均数。
+            当一个C++项目被编译的时候，C++编译器将会首先找到含有主函数的文件，并优先编译该文件。因此，如果你在主函数中调用了其他函数，C++编译器并不会知道这些函数是什么。所以你需要为每个主函数中用到的其他函数声明一个函数原型并写在主函数的前面。这样，当C++编译器遇到一个函数原型的时候，它就会开始寻找这个函数原型对应的函数并先编译该函数，然后再继续编译主程序所在的文件。下面是一个完整的C++项目的例子，它调用了一个自定义的函数来计算两个数的平均数。
             <br />
         </small>
     </p>
     <pre class="line-numbers"><code class="language-cpp">
-                    #include &#60;iostream&#62;
-                    using namespace std;
+#include &#60;iostream&#62;
+using namespace std;
 
-                    // function prototype
-                    double average(double num1, double num2);
+// function prototype
+double average(double num1, double num2);
 
-                    // main function
-                    int main()
-                    {
-                        double a = 87.3, b = 92.6;
-                        cout << "The average of " << a << " and " << b << " is: " << average(a, b);
-                        return 0;
-                    }
+// main function
+int main()
+{
+    double a = 87.3, b = 92.6;
+    cout << "The average of " << a << " and " << b << " is: " << average(a, b);
+    return 0;
+}
 
-                    // function definition
-                    double average(double num1, double num2)
-                    {
-                        double sum;
-                        sum = num1 + num2;
-                        return sum / 2;
-                    }
-                </code></pre>
+// function definition
+double average(double num1, double num2)
+{
+    double sum;
+    sum = num1 + num2;
+    return sum / 2;
+}
+    </code></pre>
     <p class="ReloadedContent">
         The output of above block of code is: <br />
         <i>The average of 87.3 and 92.6 is: 89.95</i>
@@ -108,20 +108,53 @@
         <br />
     </p>
     <hr class="ReloadedBreak" />
-    <p class="ReloadedContent">
-        //
-        <br />
+    <p class="ReloadedSubheading">
+        Calling Functions
         <small class="ReloadedChinese">
-            //
-            <br />
+            调用函数
         </small>
-        <br />
     </p>
     <p class="ReloadedContent">
-        //
+        In the example above, we have already called a function (line 12).
+        Using a function is relatively easy to understand. Here is more examples.
         <br />
         <small class="ReloadedChinese">
-            //
+            在上面的例子里面，我们其实已经调用过一次函数了(行12结尾)。调用函数相对容易理解，这里是另两个例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+// function prototypes
+void displayFunction();
+double sum(double num1, double num2);
+
+// main function
+int main()
+{
+    displayFunction();
+    double num = sum(4, 9);
+    cout << "The sum of 4 and 9 is: " << num;
+    return 0;
+}
+
+void displayFunction()
+{
+    cout << "This is a non-return function.\n";
+}
+
+double sum(double num1, double num2)
+{
+    return num1 + num2;
+}
+    </code></pre>
+    <p class="ReloadedContent">
+        The output of the program above is: <br />
+        <i>
+            This is a non-return function. <br />
+            The sum of 4 and 9 is: 13 <br />
+        </i>
+        <small class="ReloadedChinese">
+            运行上方代码块中的程序将会输出上方斜体字。
             <br />
         </small>
         <br />

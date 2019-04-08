@@ -1,1 +1,219 @@
-<h1>Repetition <small class="Chinese">循环语句</small></h1>
+<script src="subpages/prism.js"></script>
+
+<div style="margin: 0; padding: 20px;">
+    <p class="ReloadedHeading">
+        Repetition
+        <small class="ReloadedChinese">
+            循环
+        </small>
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedContent">
+        A repetition structures, also known as loops,
+        is used to repeatedly execute a block of code until certain condition.
+        For instance, I want to calculate the average of a group of numbers.
+        However, I don't know how many number are there in such a group.
+        In such circumstances, we need a kind of structure which can run repeatedly for certain times.
+        <br />
+        <small class="ReloadedChinese">
+            循环语句一般用于重复执行特定的代码块。举个例子，我想用程序计算一组数据的平均数，但我并不知道一组程序一共有多少个数据。这种情况下，我们就需要一个能执行一部分代码重复特定次数的程序语句。
+            <br />
+        </small>
+        <br />
+        In C++, there are two types of loops, <i>pre-test loop</i> and <i>post-test loop</i>.
+        Among them, pre-test loop are <i>for loop</i> and <i>while loop</i>, where post-test loop is <i>do-while loop</i>.
+        I will talk about them in detail.
+        <br />
+        <small class="ReloadedChinese">
+            在C++中，循环分为两种：一种叫 <i>先判断循环 (pre-test loop)</i>，另一种叫 <i>后判断循环 (post-test loop)</i>。其中，<i>先判断循环</i> 包括 <i>for</i> 循环和 <i>while</i> 循环；<i>后判断循环</i> 主要是 <i>do-while</i> 循环。
+            <br />
+        </small>
+        <br />
+    </p>
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        <i>For</i> Structure
+        <small class="ReloadedChinese">
+            for语句
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        The format of a <i>for</i> structure is given below.
+        <br />
+        <small class="ReloadedChinese">
+            for语句的格式如下。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+for(expression_1; expression_2; expression_3)
+{
+    loop_body
+}
+    </code></pre>
+    <p class="ReloadedContent">
+        The way that a <i>for loop</i> is executed is to run <i>expression-1</i> before <i>loop body</i> is executed.
+        Then run <i>expression-2</i> and check the result,
+        and run <i>loop body</i> for one time IF the <i>expression-2</i> returns <i>true</i>.
+        This means that the second expression is suppose to be a <i>relational</i> or <i>logical</i> expression.
+        After each time of executing the loop body, <i>for</i> structure will run <i>expression-3</i>,
+        and run <i>expression-2</i> again to check the result.
+        If the result of running <i>expression-2</i> is <i>false</i> when being checked,
+        the program will exit this <i>for loop</i>. I will use a flow chart to explain.
+        <br />
+        <small class="ReloadedChinese">
+            <i>for</i> 循环的执行方式是：在进入 <i>循环体(loop body)</i> 之前先运行 <i>表达式1(expression-1)</i>。然后运行 <i>表达式2(expression-2)</i> 并检查其结果。如果结果为 <i>true</i>，则运行 <i>循环体 (loop body)</i>。这意味着第二个表达式应该是一个 <i>关系表达式(relational expression)</i> 或 <i>逻辑表达式(logical expression)</i>。在每次运行完函数体之后，程序会运行 <i>表达式3(expression-3)</i>，然后重新检查 <i>表达式2(expression-2)</i>。如果 <i>表达式2(expression-2)</i> 在任何一次被检查时返回了 <i>false</i>，程序就会停止循环，并继续运行 <i>for</i> 循环之后的代码。
+            <br />
+        </small>
+    </p>
+    <img class="ReloadedImg" src="subpages/ForFlow.png" width="30%" />
+    <p class="ReloadedContent">
+        Here is an example of a <i>for loop</i> to calculate the sum of user inputted range.
+        <br />
+        <small class="ReloadedChinese">
+            这里是一个用 <i>for</i> 循环计算给定范围内自然数的和的例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+void sumOfRange()
+{
+    // declare variables
+    int a, b, sum = 0;
+    // input range
+    cout << "This program is used to calculate the sum of a given range.\n";
+    cout << "Please input the number you want to start adding with (included): ";
+    cin >> a;
+    cout << "Please input the last number you want to end adding (included): ";
+    cin >> b;
+    // adding
+    for(int i = a; i <= b; i ++)
+    {
+        sum += i;
+    }
+    // output result
+    cout << "The sum of range from " << a << " to " << b << " is: " << sum;
+}
+    </code></pre>
+    <br />
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        <i>While</i> Structure
+        <small class="ReloadedChinese">
+            while语句
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        The format of a <i>while loop</i> is given below.
+        <br />
+        <small class="ReloadedChinese">
+            下面是 <i>while</i> 语句的格式。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+while(condition)
+{
+    loop_body
+}
+    </code></pre>
+    <p class="ReloadedContent">
+        Compare to <i>for loops</i>, a <i>while loop</i> is easier to be understood.
+        The logic of a <i>while loop</i> is relatively simple.
+        When the program runs to a <i>while</i> structure, it will check if the condition is true.
+        And if the condition returns a <i>true</i>, the program will then execute the <i>loop body</i>.
+        After every time of running the <i>loop body</i>, program will check the condition again,
+        and keep executing the <i>loop body</i> repeatedly until the condition returns a <i>false</i>.
+        Hope the flow chart below can help you understand.
+        <br />
+        <small class="ReloadedChinese">
+            相比于 <i>for</i> 循环来讲，<i>while</i> 循环应该会更容易理解。<i>while</i> 循环的逻辑相对简单。当程序运行到一个 <i>while</i> 循环的时候，它会首先检查 <i>while</i>循环的<i>条件(condition)</i>。如果条件返回 <i>true</i>，程序就会运行 <i>循环体(loop body)</i>。每运行一次函数体之后，程序都会重新检查循环的 <i>条件(condition)</i>，如果仍然为 <i>true</i> 程序就会再次执行 <i>循环体(loop body)</i>内容，直到 <i>条件(condition)</i> 为 <i>false</i>。下面是一个 <i>while循环</i> 的流程图。
+            <br />
+        </small>
+    </p>
+    <img class="ReloadedImg" src="subpages/WhileFlow.png" width="30%" />
+    <p class="ReloadedContent">
+        Here is an example of <i>while loop</i> to estimate log(2).
+        <br />
+        <small class="ReloadedChinese">
+            这里是一个用 <i>while</i> 循环来估计log(2)的值的例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+// this function is used to estimate log(2) for a inputted number
+void estimateLogBase2(double num)
+{
+    double estimation = 2；
+    int exponent = 1;
+    while(num <= estimation)
+    {
+        estimation *= 2;
+        exponent ++;
+    }
+    cout << "The result of log(2)" << num << " shoule be between " << exponent - 1 << " and " << exponent;
+}
+    </code></pre>
+    <br />
+    <hr class="ReloadedBreak" />
+    <p class="ReloadedSubheading">
+        <i>Do-while</i> Structure
+        <small class="ReloadedChinese">
+            do-while语句
+        </small>
+    </p>
+    <p class="ReloadedContent">
+        The format of a <i>do-while loop</i> is given below:
+        <br />
+        <small class="ReloadedChinese">
+            <i>do-while</i> 循环的格式如下。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+do
+{
+    loop_body
+} while(condition);
+    </code></pre>
+    <p class="ReloadedContent">
+        Unlike pre-test loops such as <i>for loop</i> or <i>while loop</i>,
+        the condition of a post-test loop is checked after the <i>loop body</i> has been executed.
+        In other words, the loop body of a <i>do-while loop</i> will be executed at least once.
+        Here is a flow chart of <i>do-while loop</i>,
+        you will be able to find the difference between pre-test loop and post-test loop.
+        <br />
+        <small class="ReloadedChinese">
+            不同于 <i>先判断循环</i>，<i>后判断循环</i>意味着程序将先运行循环体再检查循环条件。换句话说，<i>后测试循环</i> 的循环体会被执行至少一次。这里是一个<i>do-while</i> 循环的流程图，和上面的两个流程图相对比应该能发现 <i>先判断循环</i> 和 <i>后判断循环</i> 测试的不同。
+            <br />
+        </small>
+    </p>
+    <img class="ReloadedImg" src="subpages/DoWhileFlow.png" width="20%" />
+    <p class="ReloadedContent">
+        Here is an example of a <i>do-while loop</i> to validate user input.
+        <br />
+        <small class="ReloadedChinese">
+            这里是一个用 <i>do-while</i> 循环来检查用户输入的例子。
+            <br />
+        </small>
+    </p>
+    <pre class="line-numbers"><code class="language-cpp">
+// this method will take an integer between 1 and 100 (inclusive) as input from user
+// and keep prompting the user to enter input until the user enters a valid integer
+int validInput()
+{
+    int result;
+    cout << "Please enter a integer between 1 and 100 (inclusive): ";
+    do
+    {
+        cin >> result;
+        if(result < 1 || result > 100)
+        {
+            cout << "Input error, please try again: ";
+        }
+    } while(result < 1 || result > 100);
+    return result;
+}
+    </code></pre>
+    <br />
+</div>
