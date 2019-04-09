@@ -60,11 +60,10 @@ int main()
         <code class="language-cpp">cin</code> or
         <code class="language-cpp">cout</code> statement must include
         <i>&#60;iostream&#62; head file</i>.
-        A list of C++ standard <i>head files</i> can be found from IBM Knowledge center
-        <a href="https://www.ibm.com/support/knowledgecenter/en/SSPSQF_9.0.0/com.ibm.xlcpp111.aix.doc/standlib/header_files.html" target="_blank">here</a>.
+        A list of C++ standard <i>head files</i> can be found in the References and Acknowledgement section.
         <br />
         <small class="ReloadedChinese">
-            程序的第一行是一个include指令。C++语言定义了很多实用的<i>函数(function)</i>，并把他们打包成不同的<i>头文件(head file)</i>。这一行代码标志着此程序可能会用到<i>&#60;iostream&#62;头文件</i>中的一些<i>函数</i>。<i>函数</i>是一个比较新的概念，但在左侧的导航栏里有两个关于它的链接应该可以帮到你。C++的标准库中，<i>&#60;iostream&#62;</i>是一个非常常用的<i>头文件</i>。任何使用 <i>cin</i> 和 <i>cout</i> 的程序都需要包含<i>&#60;iostream&#62;头文件</i>。上面的链接是一份C++标准库中头文件的列表。
+            程序的第一行是一个include指令。C++语言定义了很多实用的<i>函数(function)</i>，并把他们打包成不同的<i>头文件(head file)</i>。这一行代码标志着此程序可能会用到<i>&#60;iostream&#62;头文件</i>中的一些<i>函数</i>。<i>函数</i>是一个比较新的概念，但在左侧的导航栏里有两个关于它的链接应该可以帮到你。C++的标准库中，<i>&#60;iostream&#62;</i>是一个非常常用的<i>头文件</i>。任何使用 <i>cin</i> 和 <i>cout</i> 的程序都需要包含<i>&#60;iostream&#62;头文件</i>。C++标准库中头文件的列表可以在参考资料与鸣谢中找到。
             <br />
         </small>
         <br />
@@ -90,24 +89,24 @@ int main()
         <br />
         Line 3 and 5 are <i>comments</i>.
         I will talk about this in the very next section.
-        You can find the link for <i>comments</i> in the left navigation bar right after the link of this section.
+        You can find the link in the left navigation bar right after the link of this section.
         <br />
         <small class="ReloadedChinese">
             第三行和第五行是程序的<i>注释</i>。我将会在下一节中讨论注释。在左侧的导航栏中，这一节下面紧挨着的链接就是关于<i>注释</i>的。
             <br />
         </small>
         <br />
-        Line 4 to line 8 are the main function for this C++ project.
-        Every C++ project must have a main function, and it has to be named this way.
-        Once you execute an C++ project, the program will start running here.
-        <code class="language-cpp">int</code> indicates this function will return an integer,
+        Line 4 to line 8 are the <i>main function</i> for this C++ project.
+        Every C++ project must have a <i>main function</i>, and it has to be named this way.
+        Once a C++ project is executed, the program will start running from here.
+        <code class="language-cpp">int</code> indicates this <i>function</i> will return an integer,
         as line 7 shows
         <code class="language-cpp">return 0;</code>.
-        <code class="language-cpp">main ()</code> shows the name of this function is "main".
+        <code class="language-cpp">main()</code> indicates the name of this <i>function</i> is "main".
         This is a reserved name in C++,
-        which means any function named "main" will be recognized as the start point of a C++ project.
-        Therefore, you cannot have two functions both named as "main" in the same C++ project.
-        Further, the things that go into
+        which means any <i>function</i> named "main" will be recognized as the starting point of a C++ project.
+        Therefore, you cannot have two <i>functions</i> both named as "main" in the same C++ project.
+        Furthermore, things go into curly brackets
         <code class="language-cpp">{...}</code> are the code which will really be executed.
         <br />
         <small class="ReloadedChinese">
@@ -118,9 +117,9 @@ int main()
         In this very first program we have written,
         there is actually only one line of code will do some work, which is line 6.
         <code class="language-cpp">cout</code> is an output statement in C++.
-        It is not the only output command, but is very likely the most commonly used one.
-        This is a built-in function in <i>&#60;iostream&#62; head file</i>.
-        <code class="language-cpp">"Hello world."</code> is the content that will be outputted.
+        It is not the only output command in C++ but is very likely the most commonly used one.
+        It is a built-in <i>function</i> in <i>&#60;iostream&#62; head file</i>.
+        <code class="language-cpp">"Hello world."</code> is the content that will be output.
         <br />
         <small class="ReloadedChinese">
             在我们的这个程序中，只有一行代码(行6)是真正有意义的。这是一行输出指令。<i>cout</i> 并不是C++中唯一的输出指令，但很可能是最常用的一个。它属于<i>&#60;iostream&#62;头文件</i>中的内置函数。后面的<i>"Hello world."</i>是这条指令真正会输出的内容。
@@ -132,13 +131,14 @@ int main()
     <p class="ReloadedContent">
         In C++, almost every executable command has to end with a semicolon
         <code class="language-cpp">;</code>.
-        However, things that can be followed with a brace
+        However, things that can be followed with a curly brackets
         <code class="language-cpp">{...}</code>
         usually do not need to have a semicolon at the end
-        (such as functions, selections, repetitions, and etc).
+        (such as <i>functions</i>, <i>selections</i>, <i>repetitions</i>, and etc).
+        One exception is do-while loop, which can be found in the Repetition section.
         <br />
         <small class="ReloadedChinese">
-            在C++中，几乎每一行可以被执行的指令都需要以分号(;)结尾。但是，后面可以连接大括号({...})的指令一般不需要加分号(比如函数声明，条件语句，循环语句，等)。
+            在C++中，几乎每一行可以被执行的指令都需要以分号(;)结尾。但是，后面可以连接大括号( <i>{...}</i> )的指令一般不需要加分号(比如函数声明，条件语句，循环语句，等)。do-while 循环是个例外，你可以从循环那一节找到更多信息。
             <br />
         </small>
         <br />
